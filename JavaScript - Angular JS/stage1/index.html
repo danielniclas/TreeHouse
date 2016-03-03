@@ -1,0 +1,100 @@
+<html ng-app="treehouseCourse">
+
+
+  <head>
+
+
+    <style type="text/css">
+      .main, .debug {
+        width: 48%;
+      }
+
+      .main {
+        float: left;
+      }
+
+      .debug {
+        float: right;
+      }
+
+      #people li {
+        display: block;
+        margin-bottom: 1.5em;
+      }
+
+      #people li .name {
+        font-weight: bold;
+        margin-right: 1em;
+      }
+
+      #people li .profession {
+        margin-right: 1em;
+      }
+
+      #people li .hometown {
+        font-style: italic;
+      }
+    </style>
+
+
+  </head>
+
+
+  <!--ng-  Angular built in DIRECTIVES-->
+  <!--ng- is the Angular namespace-->
+  <!--ng-repeat:  directive declares that this HTML node and all of its children will repeat or iterate over a collection-->
+  <!--of some sort-->
+
+  <!--Similar to for loop syntax:-->
+  <!--for a collection (in this case pups) loop over each item and give access to each instance under a
+  specific name, in this case person-->
+
+
+  <body ng-controller="stageOneCtrl">               <!-- Notice:  No Alias-->
+
+    <div class="main">
+
+      <ul id="people">
+
+        <li ng-repeat="index in pups" ng-class="pups.profession">     <!-- pups = [puppies]  ng-repeat:  LOOP through each OBJECT in ARRAY -->
+
+            <span class="name">
+            {{index.name}}               <!--  EXPRESSION:  {{}}  Angular - Read Only that property -->
+          </span>
+
+          <span class="profession">
+            {{index.profession}}
+          </span>
+
+          <span class="hometown">
+            {{index.hometown}}
+          </span>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!--poopers is the name attached with $scope-->
+
+    <div class="debug">
+      <pre ng-bind="pups | json">
+      </pre>
+    </div>
+
+
+    <!--<div class="debug">-->
+      <!--<pre ng-bind="people | json">-->
+      <!--</pre>-->
+    <!--</div>-->
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+  </body>
+
+
+
+</html>

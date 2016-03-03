@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+
+<html ng-app="appName-store">
+<!--ng-app is a DIRECTIVE-->
+<!--When this document loads - the ng-app directive will run the 'appName-store' module-->
+
+<!--This directive creates an Angular application by running this module whe the document loads-->
+<!-- !!  TREATS the html INSIDE of this element is part of the angular app !! -->
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular.JS  Code School</title>
+
+    <!--Angular:  A client-side JavaScrip Framework for adding interactivity to HTML-->
+    <!--Need to tell out HTML when to trigger out JS-->
+
+    <!--Nice to Know:-->
+    <!--Automated Testing Tools-->
+    <!--BDD - Behavior Driven Development-->
+    <!--TDD - Test Driven Development-->
+
+    <!--Angular plays well with jQuery-->
+
+    <!--Angular only requests info it needs from JSON data-->
+
+    <!--CSS for Twitter Bootstrap-->
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.min.css" />
+
+
+</head>
+
+
+
+<body>
+
+<!--EXPRESSIONS - insert dynamic values inside of HTML-->
+<!--EXPRESSIONS:  http://docs.angularjs.org/guide/expression-->
+<p>I am {{4+6}}</p>
+<p>{{'hello'+ ' ' + 'you'}}</p>
+
+
+
+<!--ATTACH Controller to this element in HTML:  ATTACH StoreController to this DIV-->
+<!--SCOPE of the CONTROLLER is only in this DOM element-->
+<!--Directive:  ng-controller-->
+<!--Controller Name:  StoreController-->
+<!--Keyword:  as-->
+<!--Alias:  alias  (to be used inside of our expression)-->
+
+  <div ng-controller="StoreController as alias">
+
+      <ul class="list-group">
+
+          <li class="list-group-item" ng-repeat="index in alias.rock" ng-hide="alias.rock.soldOut">
+
+      <!--<div ng-show="!alias.rock.soldOut">-->
+        <!--or:-->
+      <!--<div ng-hide="alias.rock.soldOut">-->
+
+      <!--alias.rock is the ARRAY we ITERATE THROUGH-->
+
+        <h3>{{index.name}}
+        <em class="pull-right"> {{index.price | currency}}</em>
+        <img ng-src="{{index.images[0]}}" />
+        </h3>
+
+          <!--<h1>{{alias.rock.name}}</h1>-->
+          <!--<h2> ${{alias.rock.price}}</h2>-->
+          <!--<p>{{alias.rock.description}}</p>-->
+          <!---->
+
+
+              <!--<section ng-init="tab = 1" ng-controller="PanelController as panelalias">-->
+              <section ng-controller="PanelController as panelalias">
+
+                  <!--<ul class="nav nav-pills">-->
+                      <!--<li ng-class="{active:tab === 1}"><a href ng-click="tab = 1">Description</a></li>-->
+                      <!--<li ng-class="{active:tab === 2}"><a href ng-click="tab = 2">Specifications</a></li>-->
+                      <!--<li ng-class="{active:tab === 3}"><a href ng-click="tab = 3">Reviews</a></li>-->
+                  <!--</ul>-->
+
+
+                  <ul class="nav nav-pills">
+                      <li ng-class="{active:panelalias.isSelected(1)}"><a href ng-click="panelalias.selectTab(1)">Description</a></li>
+                      <li ng-class="{active:panelalias.isSelected(2)}"><a href ng-click="panelalias.selectTab(2)">Specifications</a></li>
+                      <li ng-class="{active:panelalias.isSelected(3)}"><a href ng-click="panelalias.selectTab(3)">Reviews</a></li>
+                  </ul>
+
+
+                  <!--<div class="panel" ng-show="tab === 1">-->
+                      <!--<h4>Description Tab: {{tab}}</h4>-->
+                      <!--<p>{{index.description}}</p>-->
+                  <!--</div>-->
+
+                  <!--<div class="panel" ng-show="tab === 2">-->
+                      <!--<h4>Specifications Tab: {{tab}}</h4>-->
+                      <!--<p>None Yet</p>-->
+                  <!--</div>-->
+
+                  <!--<div class="panel" ng-show="tab === 3">-->
+                      <!--<h4>Reviews Tab: {{tab}}</h4>-->
+                      <!--<p>Reviews</p>-->
+                  <!--</div>-->
+
+
+
+                  <div class="panel" ng-show="panelalias.isSelected(1)">
+                      <h4>Description - ng-click Set Tab To: {{panelalias.tab}}</h4>
+                      <p>{{index.description}}</p>
+                  </div>
+
+                  <div class="panel" ng-show="panelalias.isSelected(2)">
+                      <h4>Specifications - ng-click Set Tab To: {{panelalias.tab}}</h4>
+                      <p>None Yet</p>
+                  </div>
+
+                  <div class="panel" ng-show="panelalias.isSelected(3)">
+                      <h4>Reviews - ng-click Set Tab To: {{panelalias.tab}}</h4>
+                      <p>Reviews</p>
+                  </div>
+
+
+              </section>
+
+
+
+              <!--Directive:  Only show if the value of this expression is TRUE-->
+        <!--<button ng-show="alias.rock.canPurchase"> Add to Cart </button>-->
+        <button ng-show="index.canPurchase"> Add to Cart </button>
+
+          </li>
+      </ul>
+  </div>
+
+
+
+
+
+
+
+    <!--AngularJS Library:  -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+
+    <!--Angular from CDN:  -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>-->
+
+    <!--Custom JS file --  Angular MODULE -->
+    <script type="text/javascript" src="js/app.js"></script>
+
+
+</body>
+
+
+
+</html>

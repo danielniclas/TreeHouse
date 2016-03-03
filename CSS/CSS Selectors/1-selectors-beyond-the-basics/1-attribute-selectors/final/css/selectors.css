@@ -1,0 +1,56 @@
+/* Attribute Selectors ------------- */
+
+
+/*Targets all elements that have a class assigned*/
+
+[class] {
+  color: #ff0000;
+}
+
+
+/*Target a class:*/
+[class = "form-contact"] {
+  padding: 20px 24px;
+  background: aqua;
+}
+
+
+/*Little more specific:  Qualified by an ELEMENT TYPE:*/
+form[class = "form-contact"] {
+  padding: 20px 24px;
+  background: aqua;
+}
+
+
+/*Same:*/
+
+.form-contact {
+  padding: 20px 24px;
+  background: #f4f7f8;
+}
+
+
+div[id="container"] {
+  max-width: 500px;
+  margin: auto;
+}
+
+/*Same*/
+#container {
+  max-width: 500px;
+  margin: auto;
+}
+
+/*Target the specific input element with type=text*/
+
+input[type="text"] {
+  background: yellowgreen;
+}
+
+input[type="email"] {
+  background: violet;
+}
+
+input[placeholder] {
+  background: beige;
+}

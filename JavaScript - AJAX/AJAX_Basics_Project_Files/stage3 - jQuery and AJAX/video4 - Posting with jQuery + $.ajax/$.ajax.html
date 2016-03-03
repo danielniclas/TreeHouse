@@ -1,0 +1,43 @@
+
+
+<!--jQuery shorthand METHODS:  load, get, post and getJSON -- designed to make requests easy-->
+<!--each of these methods is built on $.ajax-->
+
+<script>
+$.ajax(url, settings);   //   ultimate AJAX method for jQuery
+                         //  Can do anything AJAX is capable of with this function
+
+//POST Example:
+
+
+$(document).ready(function() {               //  <<<<<  WAIT TILL ALL HTML LOADED
+    $('form').submit(function(evt) {           //  submit() -- event handler
+        evt.preventDefault();                    //  preventDefault()  -- prevent browser form leaving page when clicking submit
+        var url = $(this).attr("action");        //  URL obtained from 'action' attribute of form -- in HTML -- processes the form
+        var formData = $(this).serialize();          //  serialize() METHOD --  retrieve value for each form field and encode
+        console.log(data);
+        $.post(url,formData,function(response) {                    //  call back function to handle response from server
+            $('#signup').html("<p>Thanks for signing up!</p>")
+        });
+    });
+}); // end ready
+
+
+$(document).ready(function() {               //  <<<<<  WAIT TILL ALL HTML LOADED
+    $('form').submit(function(evt) {           //  submit() -- event handler
+        evt.preventDefault();                    //  preventDefault()  -- prevent browser form leaving page when clicking submit
+        var url = $(this).attr("action");        //  URL obtained from 'action' attribute of form -- in HTML -- processes the form
+        var formData = $(this).serialize();          //  serialize() METHOD --  retrieve value for each form field and encode
+        console.log(data);
+        $.ajax(url, {         //   Settings Object:  A JAVA SCRIPT OBJECT -- one or more key value pairs that set options of the request
+
+                data:  formData,
+                type:  "POST",          // specify method:  POST
+                success:  function(reponse) {$('#signup').html("<p>Thanks for signing up!</p>")}
+        });
+    });
+}); // end ready
+
+
+
+</script>

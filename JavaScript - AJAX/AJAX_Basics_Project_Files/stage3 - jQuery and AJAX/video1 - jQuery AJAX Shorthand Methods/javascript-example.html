@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <title>AJAX with JavaScript</title>
+
+
+
+  <script>
+
+
+    //  AJAX
+    //  To inject new html into a Web page
+    //  To receive JSON data from a Web server
+    //  To post form data to a database
+
+    // How AJAX works:
+    //  1.  Create an XMLHTTP Request object
+    //  2.  Create a callback function
+    //  3.  Open a request
+    //  4.  Send the request
+
+
+  var xhr = new XMLHttpRequest();           //  Step 1.  Create request object
+  xhr.open('GET', 'sidebar.html');          //  Step 3.  Open a request
+  xhr.onreadystatechange = function () {    //  Step 2.  Callback function
+    if (xhr.readyState === 4) {
+      document.getElementById('ajax').innerHTML = xhr.responseText;
+    }
+  };
+
+  function sendAJAX() {
+    xhr.send();                             //  Step 4.  Send the request
+    document.getElementById('load').style.display = 'none';
+  }
+  </script>
+
+
+
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+          </div>
+          <button id="load" onclick="sendAJAX()" class="button">Bring it!</button>
+          <ul id="ajax">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

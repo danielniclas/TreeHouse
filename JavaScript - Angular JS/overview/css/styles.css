@@ -1,0 +1,103 @@
+
+
+.main, .debug {
+    width: 48%;
+}
+
+.main {
+    float: left;
+
+    border: solid 1px red;
+    border-radius: 4px;
+}
+
+.debug {
+    float: right;
+
+    border: solid 1px red;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.people li {
+    display: block;
+    margin-bottom: 1.5em;
+}
+
+.people li .name {
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.people li .profession {
+    margin-right: 1em;
+}
+
+.people li .hometown {
+    font-style: italic;
+}
+
+.greeting {
+
+    float:  left;
+    border: solid 1px blue;
+    border-radius: 4px;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+.redtext {
+
+    color: red;
+}
+
+
+.fields {
+
+    padding: 15px;
+    float: left;
+
+    margin-top: 10px;
+    padding-right: 250px;
+    border: solid 1px green;
+    border-radius: 4px;
+
+}
+
+.fields label {
+    display: block;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+}
+
+.fields label input, .fields label select {
+    font-weight: normal;
+    margin-left: 1em;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 250px;
+}
+
+li button {
+    margin-left: 1em;
+}
+
+.contact-card, .receipt .line-item {
+    display: block;
+    margin-bottom: 1.5em;
+}
+
+.contact-card .name, .receipt .line-item .item {
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.contact-card .profession {
+    margin-right: 1em;
+}
+
+.contact-card .hometown {
+    font-style: italic;
+}

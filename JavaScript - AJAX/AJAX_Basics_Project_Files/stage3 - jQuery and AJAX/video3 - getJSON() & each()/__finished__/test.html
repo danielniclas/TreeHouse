@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+
+</head>
+<body>
+
+
+<!--<script src="http://philz.danielniclas.com/data/?callback=jsonCallback"></script>-->
+
+
+<h1>JSONP Test</h1>
+
+
+
+
+
+<script>
+
+
+
+//callback function
+        function jsonpcallback(data) {
+            //do stuff with JSON
+            console.log("The DATA:  ", data);
+        }
+
+
+
+//var url = 'data/test.js?callback=jsonpcallback&id=123';
+var url = "http://philz.danielniclas.com/data/test.js?callback=jsonpcallback";
+
+
+
+$.ajax({
+
+url: url,
+jsonp: 'jsonpcallback',
+dataType: 'jsonp',
+//data: {
+//    id:123
+//},
+
+success: function(data) {
+    console.log("success:", data);
+
+},
+error: function(e) {
+
+    console.log("ERROR", e);
+    console.log("ERROR: ", e.status);
+    console.log("ERROR: ", e.statusText);
+}
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

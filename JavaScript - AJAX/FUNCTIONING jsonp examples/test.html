@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <style>
+
+        .my-new-list {
+            color: blue;
+        }
+
+        div {
+
+            margin: 10px;
+        }
+
+        .item {
+            color: red !important;
+        }
+
+        .bulleted {
+
+            border: solid 3px purple;
+            width: 50%;
+            margin: auto;
+        }
+
+
+    </style>
+
+
+</head>
+
+</head>
+<body>
+
+
+<!--<script src="http://philz.danielniclas.com/data/?callback=jsonCallback"></script>-->
+
+<div>
+<h1>JSONP Test</h1>
+</div>
+
+<div id="list"></div>
+
+<div id="data"></div>
+
+<div id="items"></div>
+
+<div id="items2"></div>
+
+<div id="siteList"></div>
+
+
+<script>
+
+
+
+//      callback function:
+        function jsonpcallback(data) {
+            //do stuff with JSON
+            console.log("The DATA:  ", data);
+
+
+//            DIV 1
+
+            var content = "<p>";
+            content += "The DATA: " + data + "</p>";
+
+            $("#data").html(content);
+
+
+//            DIV 2 and 3 using ARRAY
+
+            var items = [];
+            var items2 = [];
+
+            $.each( data, function( key, val ) {
+                items.push( "<li id='" + key + "'>" + val + "</li>" );
+                items2.push( "<li class='item'>" + "KEY: " + key +  "&nbsp;&nbsp;&nbsp;&nbsp; VALUE: " + val + "</li>" );
+            });
+
+            $( "<ul/>", {
+                "class": "my-new-list",
+                 html: items.join( "" )
+            }).appendTo( "#items" );
+
+            $( "<ul/>", {
+                "class": "my-new-list",
+                html: items2.join( "" )
+            }).appendTo( "#items2" );
+
+
+//            DIV 4  -- No ARRAY
+
+
+            var statusHTML = '<ul class="bulleted">';     //  variable to hold the html that the callback generates
+
+            $.each(data,function (index, object) {
+
+              statusHTML +='<li>';
+              statusHTML += "ID:  " + object.id + "&nbsp;&nbsp;&nbsp;&nbsp;REGION: " + object.region + '</li>';
+            });
+
+            statusHTML += '</ul>';
+
+            $('#siteList').html(statusHTML)
+
+
+        }
+
+
+(function($) {
+
+
+//        URL Options:
+
+        //var url = 'data/test.js?callback=jsonpcallback&id=123';
+
+
+//      dataType:  jsonp
+        var url = "http://philz.danielniclas.com/data/sites.js?callback=jsonpcallback";
+
+//       dataType:  json
+//       var url = "http://philz.danielniclas.com/data/test.json";
+
+        $.ajax({
+
+            type: 'GET',
+            url: url,
+            async: false,
+            jsonp: 'jsonpcallback',
+            contentType: "application/json",
+            dataType: 'jsonp',
+
+
+            success: function (data) {
+                console.log("success:", data);
+
+            },
+            error: function (e) {
+
+                console.log("ERROR", e);
+                console.log("ERROR: ", e.status);
+                console.log("ERROR: ", e.statusText);
+
+                var content = "<ul>";
+                content += "<li> ERROR: e.status: " + e.status + "</li>";
+                content += "<li> ERROR: e.status.Text: " + e.statusText + "</li>";
+                content += "</ul>";
+
+                $("#list").html(content);
+            }
+        });
+
+    }) (jQuery);
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

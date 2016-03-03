@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Dracula's Blog</title>
+
+    <!--Dependencies-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <script src="libs/jquery-1.11.3.js"></script>
+    <script src="libs/ember-template-compiler-1.12.0.js"></script>
+    <script src="libs/ember-1.12.0.debug.js"></script>
+    <script src="libs/ember-handlebars-loader-0.0.2.js"></script>
+
+    <script src="blogger.js"></script>
+    <script src="router.js"></script>
+    <script src="store.js"></script>
+
+    <!--Add ROUTES:-->
+    <script src="routes/posts.js"></script>
+    <script src="routes/recent-comments.js"></script>
+    <script src="routes/post.js"></script>
+
+    <!--Add CONTROLLERS:-->
+    <script src="controllers/about.js"></script>
+    <script src="controllers/contact.js"></script>
+    <script src="controllers/post.js"></script>
+    <script src="controllers/posts.js"></script>
+
+
+
+    <!--HandleBar TEMPLATE LOADER:   -->
+    <script>
+        EmberHandlebarsLoader.loadTemplates(['posts', 'about', 'contact', 'phone', 'email', 'application', 'recent-comments','post']);
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

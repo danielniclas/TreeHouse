@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+
+<html ng-app="treehouseCourse">
+
+<head>
+    <style type="text/css">
+        .main, .debug {
+            width: 48%;
+        }
+
+        .main {
+            float: left;
+        }
+
+        .debug {
+            float: right;
+        }
+
+        #people li {
+            display: block;
+            margin-bottom: 1.5em;
+        }
+
+        #people li .name {
+            font-weight: bold;
+            margin-right: 1em;
+        }
+
+        #people li .profession {
+            margin-right: 1em;
+        }
+
+        #people li .hometown {
+            font-style: italic;
+        }
+
+        #people li button {
+            margin-left: 1em;
+        }
+
+    </style>
+</head>
+
+
+<body ng-controller="stageCtrl">
+
+<div class="main">
+    <ul id="people">
+
+
+
+        <li ng-repeat="object in pupArray" ng-class="object.profession">   <!-- THE REPEATER -->
+
+          <span class="name">
+            {{object.name}}
+          </span>
+          <span class="profession">
+            {{object.profession}}
+          </span>
+          <span class="hometown">
+            {{object.hometown}}
+          </span>
+
+
+          <!--PASS {object} to the SCOPED edit() METHOD  -->
+          <button ng-click="edit(object)">Edit</button>
+
+          <!--PASS {object} to the SCOPED remove() METHOD  -->
+          <button ng-click="remove(object)">Remove</button>
+
+        </li>
+
+
+    </ul>
+
+
+    <button ng-click="add()">Add from [otherPeople]</button>
+
+    <br>
+    <br>
+
+
+        <!--EDITING Form-->
+        <form class="fields">
+            <label>
+                Name:
+                <input type="text" ng-model="editingPerson.name"  />             <!-- Property.name-->
+            </label>
+
+            <label>
+                Profession:
+                <input type="text" ng-model="editingPerson.profession"  />   <!-- Property.profession-->
+            </label>
+
+            <label>
+                Home Town:
+                <input type="text" ng-model="editingPerson.hometown"  />         <!-- Property.hometown-->
+            </label>
+
+            <!--ADD a new PROPERTY:   [emails]-->
+            <!--Also ADDs an [ARRAY] to the property-->
+
+            <label>
+                Barf Code:
+                <input type="text" ng-model="editingPerson.barf"  />         <!-- Property.hometown-->
+            </label>
+
+
+            <!--ng-list -- comma seperated list stored in an [ARRAY]-->
+            <label>
+                Email Addresses:
+                <input type="text" ng-model="editingPerson.emails" ng-list  />
+            </label>
+
+        </form>
+
+    <button ng-click="save(editingPerson)">Save</button>
+
+
+</div>
+
+
+<div class="debug">
+      <pre ng-bind="pupArray | json">
+      </pre>
+</div>
+
+
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+body {
+	background: darkslategrey;
+	background-size: 780px;
+}
+
+
+
+.sat {
+    width: 95px;
+    position: absolute;
+    top: 10px;
+    left: 0%;
+    -webkit-transform: rotateZ(-5deg);
+    -moz-transform: rotateZ(-5deg);
+    -ms-transform: rotateZ(-5deg);
+    transform: rotateZ(-5deg);
+}
+
+.sat .bolt2 *,
+.sat .bolt3 *,
+.sat .bolt1 *
+
+{
+    fill: transparent;
+    stroke: transparent;
+}
+
+
+.sat #wave1,
+.sat #wave2,
+.sat #wave3
+
+{
+    stroke: transparent;
+}
+
+#colorball1,
+#colorball2 {
+
+    fill: grey;
+    stroke: grey;
+}

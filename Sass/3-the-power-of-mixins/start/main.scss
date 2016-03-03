@@ -1,0 +1,16 @@
+
+@mixin roundy {
+	border-radius: 4px;
+ 	border-top-right-radius: 8px;
+ 	border-bottom-left-radius: 8px;
+}
+
+.box {
+  @include roundy;
+}
+
+// A whole bunch of other code
+.button {
+  @include roundy;
+  background: #345;
+}

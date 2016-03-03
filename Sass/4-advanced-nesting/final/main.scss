@@ -1,0 +1,41 @@
+body {
+	background: #eee;
+}
+
+.blog {
+	> h1 {
+		color: red;
+		border: 1px solid red;
+	}
+	.entry {
+		h1 {
+			font-size: 20px;
+			color: blue;
+		}
+		p {
+			font-size: 12px;
+			margin: 20px;
+			html.csscolumns & {   	//  Powerful inline overriding
+			  						//  Style OFF html  (OVERRIDE)
+			  						// same as: html.csscolumns.blog.entry.p
+				column-count: 2;
+				column-gap: 10px;
+				margin: 10px;
+			}
+		}
+		a {
+			color: red;
+			&:hover {				//  &  Grouping
+				color: blue;
+			}
+		}
+	}
+}
+
+
+
+
+//  "&" is the PARENT SELECTOR
+//  .blog and .entry come before p
+//  &  becomes: (.blog .entry p)
+//  reverts the order of nesting

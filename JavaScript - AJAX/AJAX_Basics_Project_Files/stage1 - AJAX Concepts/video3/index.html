@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <title>AJAX with JavaScript</title>
+
+  <script>
+
+    var xhr = new XMLHttpRequest();   // Step1:  Create an XHR Object -- Tells Web Browser to get ready to use AJAX
+
+    xhr.onreadystatechange = function () {    // Step2:  CALLBACK FUNCTION (Event Handler:  onreadystatechange)
+                                              // -- triggered when change in AJAX request
+      if (xhr.readyState === 4){
+
+        // readyState === 4 :  Server has responded, request is DONE
+        //  readyState 0-3 early stages in the process
+        //  Status: 200 is ok, 404 is file not found, 401 if not authorized to access a url, 500 server has error
+
+        if (xhr.status === 200) {
+
+          document.getElementById('ajax').innerHTML = xhr.responseText;  // responseText object - information server sends back
+        } else if (xhr.status === 404) {   // Status Text:  file not found
+          console.log("Alert is:  ",  xhr.statusText);
+        } else if (xhr.status === 500) {   // server had problem
+          alert(xhr.statusText);
+        }
+
+      }
+    };
+
+
+    xhr.open('GET', 'sidebar.html');  //  Step3:  Open a request -- prepare browser for sending request
+                                       //  HTTP Method:  GET(send request for data) or POST (sending data), PUT, DELETE..
+                                       //  URL -- where the request is going
+
+//    GET -- only when interested in getting or receiving info from a server -- data base search,  getting tweets
+//    GET a resource -- ALL DATA IN THE URL!!!!   stays in browser history -- NOT SECURE -- LIMITED SPACE
+//    POST -- sending data to be saved -- like an email address
+//    POST -- SEND data in body of field
+
+    function sendAJAX() {
+
+      xhr.send();           // Step4:  Send the Request
+      document.getElementById('load').style.display = "none";    // hide button following xhr.send()
+    }
+
+//Simple AJAX Example
+//
+//    1.  Create an XMLHTTP Request Object
+//    2.  Create a callback function
+//    3.  Open a requestSend the request
+//    4.  Send the request
+//
+
+
+ 
+  </script>
+
+
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+
+            <button id="load" onclick="sendAJAX()"> Bring It!</button>
+
+          </div>
+
+          <div id="ajax">
+
+
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

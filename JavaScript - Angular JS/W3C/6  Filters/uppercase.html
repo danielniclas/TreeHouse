@@ -1,0 +1,29 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="myApp" ng-controller="personCtrl">
+
+    <p>The last name is: {{ lastName | uppercase }}</p>
+    <p>The first name is: {{ firstName | lowercase }}</p>
+
+    <input type="number" ng-model="quantity">
+    <input type="number" ng-model="price">
+
+    <p>Total = {{ (quantity * price) | currency }}</p>
+
+
+
+</div>
+
+<script src="personController.js"></script>
+
+</body>
+</html>

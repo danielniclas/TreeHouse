@@ -1,0 +1,52 @@
+
+/*	Animations - WebKit only
+------------------------------------------ */
+
+/*animation name:  rock-boat*/
+/*animation duration:  3s */
+/*timing function:  ease-in-out */
+/*animation iteration property:  #times animation cycle plays - default is 1*/
+
+.boat {
+	-webkit-animation: rock-boat 3s ease-in-out infinite;
+}
+
+/*/shorthand property:      */
+/*animation name:  steam*/
+/*animation duration:  4s*/
+/*animation delay:  2s*/
+/*timing function:  default (ease)*/
+/*iteration count:  infinite*/
+
+.boat::after {
+	-webkit-animation: steam 4s 2s infinite;
+}
+
+
+/*	Keyframes - WebKit only
+------------------------------------------ */
+
+@-webkit-keyframes rock-boat {
+	80%  { -webkit-transform: rotate(-2deg) translateY(-100px); }
+	/*50%  { -webkit-transform: rotate(-25deg) translateX(150px); }*/
+}
+
+
+
+@-webkit-keyframes steam {
+	40%,
+	60%  { opacity: 1; }
+	100% { -webkit-transform: translate(-15%, -35%) rotateZ(20deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+

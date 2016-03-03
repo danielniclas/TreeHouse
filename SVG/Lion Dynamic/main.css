@@ -1,0 +1,62 @@
+
+body {
+	background: #F0FCFF url('img/island.png') repeat-x 100% -460px;
+	background-size: 780px;
+}
+.boat {
+	width: 380px;
+	position: absolute;
+	top: 40%;
+	left: 35%;
+}
+.boat img {
+	width: 50%;
+}
+.boat::after {
+	content: "";
+	display: block;
+	width: 120px;
+	height: 120px;
+	background: url('img/steam.png') no-repeat;
+	background-size: 120px;
+	position: absolute;
+	top: -25%;
+	left: 5%;
+	opacity: 0;
+}
+
+
+.wrapper {
+    max-width: 90%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+}
+
+
+
+.mike {
+	width: 200px;
+	position: absolute;
+	top: 55%;
+	left: -30%;
+	-webkit-transform: rotateZ(-5deg);
+	-moz-transform: rotateZ(-5deg);
+	-ms-transform: rotateZ(-5deg);
+	transform: rotateZ(-5deg);
+}
+
+.lion {
+
+    /*width: 350px;*/
+    position: absolute;
+    /*top: 15%;*/
+    left: 0%;
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    -ms-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+
+
+}

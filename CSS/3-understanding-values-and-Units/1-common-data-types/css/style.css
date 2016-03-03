@@ -1,0 +1,90 @@
+/* Type Selectors ------------------ */
+
+body {
+  color: #878787;
+  margin: 0;
+  font-size: 1em;    /* 1em = 16px =  100% normal size */
+}
+
+h1 {  
+  font-size: 5.625rem;    /* 90px/16px */
+  color: white;
+}
+
+h2 {
+  font-size: 53px;
+}
+
+h3 {
+  font-size: 20px;
+  color: #48525c;
+}
+
+
+/* Pseudo-classes ------------------ */
+
+a:link {
+  color: orange;
+}
+
+a:visited {
+  color: lightblue;
+}
+
+a:hover {
+  color: forestgreen;
+}
+
+a:active {
+  color: lightcoral;
+}
+
+/* ID Selectors -------------------- */
+
+#main-footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: solid 10px orange;
+}
+
+/* Class Selectors ----------------- */
+
+.main-header {
+  background-color: orange;
+  /*width: 50%;*/
+  /*margin-left: 10%;*/
+  /*font-size: 2em;*/
+}
+
+.title {
+  color: white;
+  /*font-size: 3em;   *//*title element inheriting the font size value from the body element, and multiplying by three = 48px*/
+  font-size: 1.625rem;  /* 26px / 16px = 1.625 */
+}
+
+.primary-content, .secondary-content {
+  width: 60%;
+}
+
+.primary-content {
+  text-align: center;
+}
+
+.t-border {
+  border-top: 2px solid lightgrey; /* Top border styles */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

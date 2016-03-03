@@ -1,0 +1,120 @@
+
+/* Typography
+================================= */
+
+.navbar-text {
+	font-weight: bold;
+	margin-right: 0;
+}
+h1 {
+	font-weight: 200;
+	margin-bottom: 30px;
+}
+.lead {
+	color: #d5c1f2;
+	margin-bottom: 75px;
+}
+.lead:nth-of-type(2) {
+	font-size: initial;
+	margin-bottom: 20px;
+}
+
+/* Jumbotron
+================================= */
+
+.jumbotron {
+	background-image: url('../img/main-bg.png');
+	background-repeat: no-repeat;
+	background-position: 200% 100%;
+	padding: 200px 0 140px 0;
+	margin-bottom: 70px;
+}
+.device {
+	width: 345px;
+	height: 589px;
+	background: url('../img/device-hero.png') no-repeat;
+}
+
+/* Buttons
+================================= */
+
+.btn-default {
+	border-width: 2px;
+	border-color: inherit;
+	margin-right: 15px;
+	padding: 12px 22px;
+}
+.btn-default:hover {
+	background-color: #fff;
+	color: #957bba;
+	border-color: #fff;
+}
+
+/* Logos & Icons
+================================= */
+
+.main-logo {
+	width: 124px;
+	height: 34px;
+	margin-top: 22px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	background: url('../img/main-logo.png') no-repeat;
+	background-size: 100%;
+}
+
+/* Media Queries
+================================= */
+
+@media (max-width: 991px) {   		/* at 991px or BELOW!  Medium Device Range */
+	.jumbotron {
+		padding-top: 120px;
+		padding-bottom: 20px;
+		background-position: 10% 10%;
+	}
+}
+@media (max-width: 767px) {			/* at 767px or BELOW!  Small Device Range */
+	.navbar {
+		min-height: 60px;
+	}
+	.main-logo {
+		width: 82px;
+		margin-top: 20px;
+	}
+	.jumbotron {
+		padding-top: 80px;
+		margin-bottom: 32px;
+	}
+	.lead {
+		margin-bottom: 40px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

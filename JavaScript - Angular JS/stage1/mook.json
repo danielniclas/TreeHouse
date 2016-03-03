@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Mook",
+    "profession": "Barking",
+    "hometown": "San Jose, CA"
+  },
+  {
+    "name": "Koost",
+    "profession": "Pooping",
+    "hometown": "Los Angeles, CA"
+  },
+  {
+    "name": "Nibs",
+    "profession": "jibbing",
+    "hometown": "San Francisco, CA"
+  }
+]

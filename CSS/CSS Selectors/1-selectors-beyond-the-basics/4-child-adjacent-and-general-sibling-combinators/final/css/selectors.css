@@ -1,0 +1,122 @@
+/* Attribute Selectors ------------- */
+
+.form-contact {
+  padding: 20px 24px;
+  background: #f4f7f8;
+}
+
+#container {
+  max-width: 500px;
+  margin: auto;
+}
+
+input[type="email"] {
+  background: #fdfee6;
+}
+
+a[target="_blank"] {
+  color: #39add1;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+}
+
+/* DRY Classes ------------- */
+
+.br {
+  border-radius: .5em;
+}
+
+.avatar {
+  display: block;
+  margin: 0 auto 2em;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: .875em;
+  font-weight: 400;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  opacity: .75;
+}
+
+.default {
+  background-color: #52bab3;
+}
+
+.error {
+  background-color: #ff784f;
+}
+
+
+
+
+
+
+@media (min-width: 769px) {
+  .inln {
+    width: auto;
+    display: inline-block;
+  }
+
+
+  /*   +  ADJACENT SIBLING COMBINATOR Selector  --  Immediately follows an element*/
+  /*targets only the element that follows*/
+
+
+  .btn + .btn {
+    margin-left: 20px;
+    color: #ff0000;
+    background-color: #ffff00;
+  }
+}
+
+/* Combinators ------------- */
+
+/*Combinators:  >  +  ~     Target any DESCENDANT element and any SIBLING*/
+
+/*  > Direct Children*/
+
+form > a {
+  font-size: 1.7em;
+  color: forestgreen !important;
+
+}
+
+/*   +  ADJACENT SIBLING COMBINATOR Selector  --  Immediately follows an element*/
+/*See Above*/
+
+
+/*   ~  General Sibling Combinator*/
+/*   Targets immediate sibling and every specified sibling that follows */
+
+/*   Every label element that follows an h1:*/
+
+
+h1 ~ label {
+  background: tomato;
+  color: black;
+  padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

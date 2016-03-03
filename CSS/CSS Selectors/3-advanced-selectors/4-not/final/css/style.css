@@ -1,0 +1,73 @@
+
+:root {
+  background: #e3effb;
+}
+
+:target {
+  background: #384047;
+  color: white;
+}
+
+#col-c:target {
+  background: #eff1f2;
+  color: initial;
+  box-shadow: 0 0 6px rgba(0,0,0, .2);
+}
+
+input:not([type="submit"]) {
+	border: solid 1px red;
+	box-shadow: inset 0 2px 0 rgba(0,0,0, .15);
+}
+
+.col:not(:first-child),
+nav a:not(:first-child) {
+	margin-left: 15px;
+  color: blue;
+}
+
+
+
+
+
+
+/*
+Review:
+
+Excellent when you don't have control over the HTML  -- CMS!!!
+
+PSEUDO-CLASSES:
+
+:first-child  -  select first child of a parent
+:last-child  -  select last child of a parent
+:only-child  -  target elements with no siblings
+:empty  -  targets elements with no children or content
+
+Substring matching attribute selectors  -  match specific pieces of an attributes value
+ ^ tells browser to match a piece of code that's at the beginning of an attributes value
+ $ matches a piece at the end of an attributes value
+ * matches any part of an attributes value
+
+:checked  -  targets the checked state of a radio button or checkbox
+:disabled -- targets disabled text fields
+
+:nth-child()  --  (argument)
+:nth-child(an+b)  --  b = first element to select (number),   a = cycle of elements to select
+
+:nth-of-type()
+:nth-last-of-type()    --  number of element from the bottom
+
+:root  --  highest/top most element in page  --  usually <html> element
+:target --  targets of internal page href links
+
+:not()  --  element we do NOT want to target
+
+PSEUDO-ELEMENTS:   (not part of the DOM)
+
+
+
+*/
+
+
+
+
+

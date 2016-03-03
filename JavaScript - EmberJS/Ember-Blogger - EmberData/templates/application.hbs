@@ -1,0 +1,41 @@
+
+
+<!--IMPORTANT:-->
+
+<!--Application.hbs template-->
+
+<!--Automatically loaded when your Ember app starts up-->
+
+<!--Every subsequent template is rendered into its OUTLET HELPER-->
+
+<!--Now in all of our other templates we don't have to have the NAV bar-->
+
+
+
+<div class="container">
+
+    <nav class="navbar navbar-default"  role="navigation">
+        <ul class="nav navbar-nav">
+            <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+            <li>{{#link-to 'recent-comments'}}Recent Comments{{/link-to}}</li>
+            <li>{{#link-to 'about'}}About{{/link-to}}</li>
+            <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+        </ul>
+
+        <!-- (Double Curlys)  HandleBar Helpers help link from one route to another-->
+
+    </nav>
+
+    <!--application.hbs is the SUPER NEST with its OUTLET HELPER-->
+
+    {{outlet}}
+
+</div>
+
+<!--When you visit a URL, the router looks up the path and and matches it to a route-->
+<!--The route loads a template with the same name. -->
+<!--If the route is nested, the parent route is loaded and the child route is loaded into the outlet helper of the parent-->
+
+<!--IMPLICIT APPLICATION ROUTE-->
+<!--There is also an implicit application route that all other routes are loaded into. -->
+<!--If you create an application.hbs template with an outlet helper all other templates will automatically get rendered into that outlet-->

@@ -1,0 +1,27 @@
+
+/* Layout
+================================= */
+
+body {
+	padding-top: 70px;
+}
+.container {
+	max-width: 1000px;
+}
+
+/* Jumbotron
+================================= */
+
+.jumbotron {
+	text-align: center;
+}
+
+/* Glyphicons
+================================ */
+
+.glyphicon {
+	font-size: 3em;
+	display: block;
+	text-align: center;
+	color: #3a87ad;
+}

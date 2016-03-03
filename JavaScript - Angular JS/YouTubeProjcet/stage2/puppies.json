@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Mooky",
+    "profession": "Eating Biscuits"
+  },
+  {
+    "id": 2,
+    "name": "Nibblet",
+    "profession": "Jumping and Flying"
+  },
+  {
+    "id": 3,
+    "name": "Koost",
+    "profession": "Sleeping"
+  }
+]

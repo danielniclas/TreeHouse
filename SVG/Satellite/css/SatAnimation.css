@@ -1,0 +1,515 @@
+
+/*	Animations
+------------------------------------------ */
+
+
+/*call: sat-move animation sequence*/
+/*duration of 6s*/
+/*delay of 6s*/
+/*timing function: ease-out*/
+/*forwards fill mode*/
+
+/*call: mike-float*/
+/*duration:  3.2s*/
+/*iteration count: infinite*/
+
+/*.sat {*/
+	/*-webkit-animation: mike-move 10s 2s ease-out forwards,*/
+	                   /*mike-float 3.2s infinite;*/
+/*}*/
+
+
+.sat {
+    -webkit-animation: sat-move 55s ease-in-out forwards,
+    sat-float 4s infinite;
+
+    -moz-animation: sat-move 55s ease-in-out forwards,
+    sat-float 4s infinite;
+
+    animation: sat-move 55s ease-in-out forwards,
+    sat-float 4s infinite;
+
+}
+
+
+.sat .bolt1 *
+{
+    -webkit-animation: bolt1-flash 8s 4000ms infinite;
+    /*-webkit-animation-timing-function: cubic-bezier(0,1,0,1);*/
+    -webkit-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    -moz-animation: bolt1-flash 8s 4000ms infinite;
+    -moz-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    animation: bolt1-flash 8s 4000ms infinite;
+    animation-timing-function: cubic-bezier(0,10,0,10);
+
+}
+
+
+.sat .bolt2 *
+{
+    -webkit-animation: bolt2-flash 8s 4s infinite;
+    /*-webkit-animation-timing-function: cubic-bezier(0,1,0,1);*/
+    -webkit-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    -moz-animation: bolt2-flash 8s 4s infinite;
+    -moz-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    animation: bolt2-flash 8s 4s infinite;
+    animation-timing-function: cubic-bezier(0,10,0,10);
+
+}
+
+.sat .bolt3 *
+{
+    -webkit-animation: bolt3-flash 8s 4s infinite;
+    /*-webkit-animation-timing-function: cubic-bezier(0,1,0,1);*/
+    -webkit-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    -moz-animation: bolt3-flash 8s 4s infinite;
+    -moz-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    animation: bolt3-flash 8s 4s infinite;
+    animation-timing-function: cubic-bezier(0,10,0,10);
+}
+
+
+.sat #wave1,
+#colorball1
+{
+    -webkit-animation: wave1-flash 2s 5s infinite;
+    /*-webkit-animation-timing-function: cubic-bezier(0,1,0,1);*/
+    -webkit-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    -moz-animation: wave1-flash 2s 5s infinite;
+    -moz-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    animation: wave1-flash 2s 5s infinite;
+    animation-timing-function: cubic-bezier(0,10,0,10);
+}
+
+.sat #wave2
+{
+    -webkit-animation: wave2-flash 2s 5s infinite;
+    /*-webkit-animation-timing-function: cubic-bezier(0,1,0,1);*/
+    -webkit-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    -moz-animation: wave2-flash 2s 5s infinite;
+    -moz-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    animation: wave2-flash 2s 5s infinite;
+    animation-timing-function: cubic-bezier(0,10,0,10);
+}
+
+.sat #wave3
+{
+    -webkit-animation: wave3-flash 2s 5s infinite;
+    /*-webkit-animation-timing-function: cubic-bezier(0,1,0,1);*/
+    -webkit-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    -moz-animation: wave3-flash 2s 5s infinite;
+    -moz-animation-timing-function: cubic-bezier(0,10,0,10);
+
+    animation: wave3-flash 2s 5s infinite;
+    animation-timing-function: cubic-bezier(0,10,0,10);
+}
+
+
+
+
+/*#colorball1*/
+/*{*/
+    /*-webkit-animation: colorball1-flash 2s 5s infinite;*/
+    /*-webkit-animation-timing-function: cubic-bezier(0,1,0,1);*/
+
+    /*-moz-animation: colorball1-flash 2s 5s infinite;*/
+    /*-moz-animation-timing-function: cubic-bezier(0,1,0,1);*/
+
+    /*animation: colorball1-flash 2s 5s infinite;*/
+    /*animation-timing-function: cubic-bezier(0,1,0,1);*/
+/*}*/
+
+
+#colorball2
+{
+    -webkit-animation: colorball2-flash 1s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+
+    -moz-animation: colorball2-flash 1s infinite;
+    -moz-animation-timing-function: cubic-bezier(0,1,0,1);
+
+    animation: colorball2-flash 1s infinite;
+    animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+
+/*Flower Growth*/
+
+#flower19 {
+    -webkit-animation: flower-appear 1s 7000ms infinite;
+    -moz-animation: flower-appear 1s 7000ms infinite;
+    animation: flower-appear 1s 7000ms infinite;
+}
+
+#flower2 {
+    -webkit-animation: flower-appear 1s 7500ms infinite;
+    -moz-animation: flower-appear 1s 7500ms infinite;
+    animation: flower-appear 1s 7500ms infinite;
+}
+
+#flower3 {
+    -webkit-animation: flower-appear 1s 8000ms infinite;
+    -moz-animation: flower-appear 1s 8000ms infinite;
+    animation: flower-appear 1s 8000ms infinite;
+}
+
+#flower4 {
+    -webkit-animation: flower-appear 1s 9800ms infinite;
+    -moz-animation: flower-appear 1s 9800ms infinite;
+    animation: flower-appear 1s 9800ms infinite;
+}
+
+#flower5 {
+    -webkit-animation: flower-appear 1s 10000ms infinite;
+    -moz-animation: flower-appear 1s 10000ms infinite;
+    animation: flower-appear 1s 10000ms infinite;
+}
+
+#flower6 {
+    -webkit-animation: flower-appear 1s 11000ms infinite;
+    -moz-animation: flower-appear 1s 11000ms infinite;
+    animation: flower-appear 1s 11000ms infinite;
+}
+
+#flower7 {
+    -webkit-animation: flower-appear 1s 12000ms infinite;
+    -moz-animation: flower-appear 1s 12000ms infinite;
+    animation: flower-appear 1s 12000ms infinite;
+}
+
+#flower8 {
+    -webkit-animation: flower-appear 1s 13000ms infinite;
+    -moz-animation: flower-appear 1s 13000ms infinite;
+    animation: flower-appear 1s 13000ms infinite;
+}
+
+
+#flower9 {
+    -webkit-animation: flower-appear 1s 15000ms infinite;
+    -moz-animation: flower-appear 1s 15000ms infinite;
+    animation: flower-appear 1s 15000ms infinite;
+}
+
+#flower10 {
+    -webkit-animation: flower-appear 1s 15100ms infinite;
+    -moz-animation: flower-appear 1s 15100ms infinite;
+    animation: flower-appear 1s 15100ms infinite;
+}
+
+#flower11 {
+    -webkit-animation: flower-appear 1s 15200ms infinite;
+    -moz-animation: flower-appear 1s 15200ms infinite;
+    animation: flower-appear 1s 15200ms infinite;
+}
+
+#flower12 {
+    -webkit-animation: flower-appear 1s 16000ms infinite;
+    -moz-animation: flower-appear 1s 16000ms infinite;
+    animation: flower-appear 1s 16000ms infinite;
+}
+
+#flower13 {
+    -webkit-animation: flower-appear 1s 17000ms infinite;
+    -moz-animation: flower-appear 1s 17000ms infinite;
+    animation: flower-appear 1s 17000ms infinite;
+}
+
+#flower14 {
+    -webkit-animation: flower-appear 1s 20200ms infinite;
+    -moz-animation: flower-appear 1s 20200ms infinite;
+    animation: flower-appear 1s 20200ms infinite;
+}
+
+#flower15 {
+    -webkit-animation: flower-appear 1s 30000ms infinite;
+    -moz-animation: flower-appear 1s 30000ms infinite;
+    animation: flower-appear 1s 30000ms infinite;
+}
+
+#flower16 {
+    -webkit-animation: flower-appear 1s 33000ms infinite;
+    -moz-animation: flower-appear 1s 33000ms infinite;
+    animation: flower-appear 1s 33000ms infinite;
+}
+
+#flower17 {
+    -webkit-animation: flower-appear 1s 36000ms infinite;
+    -moz-animation: flower-appear 1s 36000ms infinite;
+    animation: flower-appear 1s 36000ms infinite;
+}
+
+#flower18 {
+    -webkit-animation: flower-appear 1s 36800ms infinite;
+    -moz-animation: flower-appear 1s 36800ms infinite;
+    animation: flower-appear 1s 36800ms infinite;
+}
+
+#flower1 {
+    -webkit-animation: flower-appear 1s 38000ms infinite;
+    -moz-animation: flower-appear 1s 38000ms infinite;
+    animation: flower-appear 1s 38000ms infinite;
+}
+
+#flower20 {
+    -webkit-animation: flower-appear 1s 38200ms infinite;
+    -moz-animation: flower-appear 1s 38200ms infinite;
+    animation: flower-appear 1s 38200ms infinite;
+}
+
+#flower22 {
+    -webkit-animation: flower-appear 1s 39500ms infinite;
+    -moz-animation: flower-appear 1s 39500ms infinite;
+    animation: flower-appear 1s 39500ms infinite;
+}
+
+#flower21 {
+    -webkit-animation: flower-appear 1s 39600ms infinite;
+    -moz-animation: flower-appear 1s 39600ms infinite;
+    animation: flower-appear 1s 39600ms infinite;
+}
+
+
+
+/*	Keyframes - WebKit only
+------------------------------------------ */
+
+@-webkit-keyframes sat-move  {
+    /*50%  { -webkit-transform: rotate(-5deg) translateY(-10px); }*/
+    20% { left: 20%;}
+    40% { left: 40%;}
+    50% { left: 50%; }
+    80% { left: 80%; }
+    100%  { left: 65%; }
+}
+
+@keyframes sat-move  {
+
+    20% { left: 20%;}
+    40% { left: 40%;}
+    50% { left: 50%; }
+    80% { left: 80%; }
+    100%  { left: 65%; }
+}
+
+
+@-webkit-keyframes sat-float {
+    50% { -webkit-transform:  rotateZ(15deg) ; }
+}
+
+
+@keyframes sat-float {
+    /*50% { transform: rotateZ(5deg) translateY(-15px); }*/
+    50% { -webkit-transform:  rotateZ(15deg) ; }
+}
+
+
+
+@-webkit-keyframes bolt1-flash {
+
+    /*40% { fill: transparent; stroke: transparent; }*/
+    /*50% { fill: red; stroke: red; }*/
+    /*80% { fill: transparent; stroke: transparent;}*/
+    /*96% { fill: red; stroke: red;}*/
+
+    40% { visibility: hidden; }
+    50% { visibility: visible; }
+    80% { visibility: hidden;}
+    96% { visibility: visible;}
+
+}
+
+
+@keyframes bolt1-flash {
+
+    40% { visibility: hidden; }
+    50% { visibility: visible; }
+    80% { visibility: hidden;}
+    96% { visibility: visible;}
+}
+
+
+
+@-webkit-keyframes bolt2-flash {
+
+    /*42% { fill: transparent; stroke: transparent; }*/
+    /*52% { fill: yellow; stroke: yellow; }*/
+    /*82% { fill: transparent; stroke: transparent;}*/
+    /*98% { fill: yellow; stroke: yellow;}*/
+
+    41% { visibility: hidden; }
+    51% { visibility: visible; }
+    81% { visibility: hidden;}
+    97% { visibility: visible;}
+}
+
+
+@keyframes bolt2-flash {
+
+    /*42% { fill: transparent; stroke: transparent; }*/
+    /*52% { fill: yellow; stroke: yellow; }*/
+    /*82% { fill: transparent; stroke: transparent;}*/
+    /*98% { fill: yellow; stroke: yellow;}*/
+
+    41% { visibility: hidden; }
+    51% { visibility: visible; }
+    81% { visibility: hidden;}
+    97% { visibility: visible;}
+}
+
+
+@-webkit-keyframes bolt3-flash {
+
+    /*44% { fill: transparent; stroke: transparent; }*/
+    /*54% { fill: yellow; stroke: yellow; }*/
+    /*84% { fill: transparent; stroke: transparent;}*/
+    /*100% { fill: yellow; stroke: yellow;}*/
+
+    42% { visibility: hidden; }
+    52% { visibility: visible; }
+    82% { visibility: hidden;}
+    98% { visibility: visible;}
+}
+
+
+@keyframes bolt3-flash {
+
+    /*44% { fill: transparent; stroke: transparent; }*/
+    /*54% { fill: yellow; stroke: yellow; }*/
+    /*84% { fill: transparent; stroke: transparent;}*/
+    /*100% { fill: yellow; stroke: yellow;}*/
+
+
+    42% { visibility: hidden; }
+    52% { visibility: visible; }
+    82% { visibility: hidden;}
+    98% { visibility: visible;}
+}
+
+
+
+
+
+@-webkit-keyframes wave1-flash {
+
+    39% { visibility: hidden; }
+    49% { visibility: visible; }
+    79% { visibility: hidden;}
+    95% { visibility: visible;}
+}
+
+@keyframes wave1-flash {
+
+    /*39% { stroke: white; }*/
+    /*49% { stroke: transparent; }*/
+    /*79% { stroke: white;}*/
+    /*95% { stroke: transparent;}*/
+
+    39% { visibility: hidden; }
+    49% { visibility: visible; }
+    79% { visibility: hidden;}
+    95% { visibility: visible;}
+}
+
+
+
+@-webkit-keyframes wave2-flash {
+
+    42% { visibility: hidden; }
+    52% { visibility: visible; }
+    82% { visibility: hidden;}
+    98% { visibility: visible;}
+}
+
+@keyframes wave2-flash {
+
+    42% { visibility: hidden; }
+    52% { visibility: visible; }
+    82% { visibility: hidden;}
+    98% { visibility: visible;}
+}
+
+
+
+@-webkit-keyframes wave3-flash {
+
+    44% { visibility: hidden; }
+    54% { visibility: visible; }
+    84% { visibility: hidden;}
+    100% { visibility: visible;}
+}
+
+@keyframes wave3-flash {
+
+    44% { visibility: hidden; }
+    54% { visibility: visible; }
+    84% { visibility: hidden;}
+    100% { visibility: visible;}
+}
+
+
+
+/*@-webkit-keyframes colorball1-flash {*/
+
+    /*40% { stroke: orangered; fill: orangered; }*/
+    /*50% { stroke: grey; fill: grey; }*/
+    /*80% { stroke: orangered; fill: orangered;}*/
+    /*96% { stroke: grey; fill: grey;}*/
+/*}*/
+
+/*@keyframes colorball1-flash {*/
+
+    /*40% { stroke: orangered; fill: orangered; }*/
+    /*50% { stroke: grey; fill: grey; }*/
+    /*80% { stroke: orangered; fill: orangered;}*/
+    /*96% { stroke: grey; fill: grey;}*/
+/*}*/
+
+
+
+
+@-webkit-keyframes colorball2-flash {
+
+    25% {  visibility: hidden; }
+    50% { visibility: visible; }
+    /*75% { visibility: hidden;}*/
+    /*100% { visibility: visible;}*/
+}
+
+
+@keyframes colorball2-flash {
+
+    25% {  visibility: hidden; }
+    50% { visibility: visible; }
+    /*75% { visibility: hidden;}*/
+    /*100% { visibility: visible;}*/
+}
+
+
+
+
+
+@-webkit-keyframes flower-appear
+{
+    1% {  visibility: visible;  }
+}
+
+@keyframes flower-appear
+{
+    1% {  visibility: visible;  }
+}
+
+
+
+
+

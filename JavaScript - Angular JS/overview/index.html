@@ -1,0 +1,490 @@
+<html ng-app="AngularApp" xmlns="http://www.w3.org/1999/html">
+
+
+  <head>
+      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+      <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+  </head>
+
+
+  <!--  ng-  Angular built in DIRECTIVES  -->
+  <!--  ng- is the Angular namespace  -->
+
+  <!--  ng-app -->
+  <!--  ng-controller  :  link with DATA  -->
+  <!--  ng-model  -->
+  <!--  ng-repeat  :  Loop through ARRAY or OBJECT --  Loop through ITEM (label) in COLLECTION  -->
+  <!--  ng-list : Transforms a character separated list into a data array-->
+  <!--  ng-bind  :  bind to all JSON data -->
+  <!--  ng-class  -->
+  <!--  ng-show  -->
+  <!--  ng-hide  -->
+  <!--  ng-switch  -->
+  <!--  ng-disabled  -->
+  <!--  ng-style  -->
+  <!--many more at AngularJS.org-->
+
+
+  <body>
+
+      <section ng-controller="CtrlOne">
+        <div  class="main">
+
+          <ul class="people">
+
+            <li ng-repeat="index in pups1" ng-class="pups.profession">     <!-- pups1 = [puppies] - List Item.  ng-repeat:  LOOP through each OBJECT in ARRAY (COLLECTION) -->
+
+                <span class="name">
+                {{index.name}}               <!--  EXPRESSION:  {{}}  Angular - Read Only that property -->
+              </span>
+
+              <span class="profession">
+                {{index.profession}}
+              </span>
+
+              <span class="hometown">
+                {{index.hometown}}
+              </span>
+
+                <!--ng-click-->
+                <!--Other built in directives to listen for DOM events:  focus, blur, hover, double click, submit...-->
+                <!--PASS {object} to the SCOPED edit() METHOD  -->
+                <button ng-click="edit(index)">Edit</button>
+
+                <!--ng-click-->
+                <!--PASS {object} to the SCOPED remove() METHOD  -->
+                <button ng-click="remove(index)">Remove</button>
+
+            </li>
+          </ul>
+
+            <!--ng-click directive to call add():  -->
+            <button ng-click="add()">Add() from [morePuppies]</button>
+
+            <!--EDITING Form-->
+            <form class="fields">
+                <label>
+                    Name:
+                    <input type="text" ng-model="editingPup.name"  />             <!-- Property.name-->
+                </label>
+
+                <label>
+                    Profession:
+                    <input type="text" ng-model="editingPup.profession"  />   <!-- Property.profession-->
+                </label>
+
+                <label>
+                    Home Town:
+                    <input type="text" ng-model="editingPup.hometown"  />         <!-- Property.hometown-->
+                </label>
+
+                <!--ng-list -- comma separated list stored in an [ARRAY]-->
+                <label>
+                    Email Addresses:
+                    <input type="text" ng-model="editingPup.emails" ng-list  />
+                </label>
+
+            </form>
+
+        </div>
+
+
+        <div  class="debug">
+            <p>[Pups1]</p>
+            <pre ng-bind= "pups1 | json" ></pre>
+
+            <p>[morePuppies]</p>
+            <pre ng-bind= "morePuppies | json" ></pre>
+
+        </div>
+
+
+
+
+      </section>
+
+    <section  ng-controller="CtrlTwo">
+
+      <div class="greeting">
+          <h3>(One way data EXPRESSION):  Hello <span class="redtext">{{myData.name}}</span>, I like to <span class="redtext"> {{myData.role}}</span></h3>
+      </div>
+
+
+          <div class="fields">
+                                        <!--  ng-model:  Two way data binding-->
+                                        <!--  ng-model - portal or pipeline between input and property-->
+
+              <p style="font-weight: bold">Two Way Data-Binding:  ng-model</p>
+
+              <label>
+                  Your Name
+                  <input type="text" ng-model="myData.name" />        <!-- Attribute:  ng-model (directive) -->
+              </label>
+
+
+              <label>
+                  Select name
+
+                  <select ng-model="myData.name">                     <!-- Attribute:  ng-model (directive) -->
+                      <option value="Alex">Alex</option>
+                      <option value="David">David</option>
+                      <option value="Laura">Laura</option>
+                      <option value="Koost">Koost</option>
+                      <option value="MOOK">{{myData.name}}</option>
+                  </select>
+
+              </label>
+
+
+              <label>
+                  Select role
+
+                  <select ng-model="myData.role">                     <!-- Attribute:  ng-model (directive)  -->
+                      <option value="bark">Bark</option>
+                      <option value="poop">Poop</option>
+                      <option value="barf">Barf</option>
+
+                  </select>
+
+              </label>
+          </div>
+      </div>
+
+
+          <div  class="debug">
+          <pre ng-bind= "myData | json" >
+          </pre>
+          </div>
+
+    </section>
+
+
+      <div style="float: left; margin-top: 30px; margin-bottom: 10px; width: 100%; font-weight: bold">WYSIWYG Editor INPUT:</div>
+
+
+      <section ng-controller="CtrlWysiwyg">
+
+
+      <div class="main">
+
+          <!--ng-model with CUSTOM DIRECTIVE:  hallodirective-->
+
+          <div class="textarea" ng-model="user.bio" hallodirective></div>
+
+      </div>
+
+
+      <div class="debug">
+      <pre ng-bind="user | json">
+      </pre>
+      </div>
+
+     </section>
+
+      <div style="float: left; margin-top: 30px; margin-bottom: 10px;  width: 100%; font-weight: bold">Fire Events Based on Data Changes (User Interactions):</div>
+      <div style="float: left; margin-top: 0; margin-bottom: 10px;  width: 100%; font-weight: bold">Autosave feature like GMAIL:  --  No binding to keystroke or button click</div>
+
+      <section ng-controller="watcher">
+
+
+          <div class="main">
+              <form class="fields">
+                  <label>
+                      Message:
+                      <textarea ng-model="message.text"></textarea><br>
+                      <span>message.text: {{message.text}}</span> <br>
+                      <span>message.lastSaved: {{message.lastSaved}}</span> <br>
+                  </label>
+              </form>
+          </div>
+
+      <div class="debug">
+          <pre ng-bind="message | json">
+          </pre>
+      </div>
+
+
+      </section>
+
+      <div style="float: left; margin-top: 30px; margin-bottom: 10px;  width: 100%; font-weight: bold">$http Service:</div>
+
+      <section ng-controller="services">
+
+          <div class="main">
+              <ul class="people">
+
+                  <li ng-repeat="person in people" ng-class="person.profession">  <!-- ITERATE over each instance of a collection-->
+
+                      <input type="text" ng-model="person.name" class="name" />
+                      <input type="text" ng-model="person.profession" class="profession" />
+                      <input type="text" ng-model="person.hometown" class="hometown" />
+
+                      <button ng-click="save(person)">Save</button>
+
+                  </li>
+
+              </ul>
+
+          </div>
+
+
+
+          <div class="debug">
+      <pre ng-bind="people | json">
+      </pre>
+          </div>
+
+      </section>
+
+      <div style="float: left; margin-top: 30px; margin-bottom: 10px;  width: 100%; font-weight: bold">DATA STORED IN FACTORY -- Puppy Factory:</div>
+
+      <section ng-controller="factoryController">
+
+
+          <div class="main">
+              <ul class="people" id="people">
+
+
+                  <li ng-repeat="index in factoryPups">
+
+                      <input type="text" ng-model="index.name" class="name" />
+                      <input type="text" ng-model="index.profession" class="profession" />
+                      <input type="text" ng-model="index.hometown" class="hometown" />
+
+                      <button ng-click="remove(index)">Remove</button>
+                      <button ng-click="save(index)">Save</button>
+
+                  </li>
+              </ul>
+
+            <div>
+              <button ng-click="add(index)">Add</button>
+
+            </div>
+
+          </div>
+
+
+          <div class="debug">
+              <p>[factoryPups]</p>
+            <pre ng-bind="factoryPups | json"></pre>
+
+              <p>[otherFactoryPups]</p>
+            <pre ng-bind="otherFactoryPups | json"></pre>
+
+
+          </div>
+
+      </section>
+
+
+      <div style="float: left; margin-top: 30px; margin-bottom: 10px;  width: 100%; font-weight: bold">DATA STORED IN JSON FILE:  Poop Factory:</div>
+
+      <section ng-controller="poopController">
+
+
+          <div class="main">
+              <ul class ="people">
+
+
+                  <li ng-repeat="index in poops">
+
+                      <input type="text" ng-model="index.name" class="name" />
+                      <input type="text" ng-model="index.profession" class="profession" />
+                      <input type="text" ng-model="index.hometown" class="hometown" />
+
+                      <button ng-click="remove(index)">Remove</button>
+                      <button ng-click="save(index)">Save</button>
+
+                  </li>
+              </ul>
+
+              <div>
+                  <button ng-click="add(index)">Add</button>
+
+              </div>
+
+          </div>
+
+
+          <div class="debug">
+              <p>[poops]</p>
+              <pre ng-bind="poops | json"></pre>
+
+              <p>[otherPoops]</p>
+              <pre ng-bind="otherPoops | json"></pre>
+
+
+          </div>
+
+      </section>
+
+
+      <div style="float: left; margin-top: 30px; margin-bottom: 10px;  width: 100%; font-weight: bold">DIRECTIVES: </div>
+
+      <section ng-controller="directiveExample">
+
+      <div class="main">
+          <div class ="people">
+              <h3 style="color: red;">People</h3>
+
+
+              <div ng-repeat="person in people track by person.id">
+
+                  <!--CUSTOM DIRECTIVE:  contact-card -->
+                  <!--In HTML all DIRECTIVES are lower-case and use dashes -->
+                  <div contact-card="person"></div>
+
+              </div>
+
+
+          </div>
+
+
+          <div class="receipt" >
+              <h3 style="color: red;">Receipt</h3>
+
+              <!--ng-repeat:  SYNTAX:  (key, value) in COLLECTION-->
+              <p class="line-item" ng-repeat="(food, cost) in receipt">
+                  <span class="item">{{food}}</span>
+                  <span class="cost">${{cost}}</span>
+              </p>
+          </div>
+      </div>
+
+
+
+      <div class="debug">
+      <pre ng-bind="people | json">
+      </pre>
+      <pre ng-bind="receipt | json">
+      </pre>
+      </div>
+
+      </section>
+
+
+
+      <div style="float: left; margin-top: 30px; margin-bottom: 10px;  width: 100%; font-weight: bold">Date Picker: </div>
+      <section>
+      <div class="main">
+
+
+          <div class="receipt">
+              <h3>jQueryUI datepicker + jQuery Smoothness CDN</h3>
+
+              <label>
+                  Date:
+                  <!--CUSTOM DIRECTIVE:  datepicker-->
+                  <input picker/>
+              </label>
+
+          </div>
+      </div>
+      </section>
+
+      <div style="float: left; margin-top: 30px; margin-bottom: 10px;  width: 100%; font-weight: bold">Date Picker + $attrs for customization: </div>
+      <section>
+
+
+
+
+          <div class="main">
+
+
+              <div class="receipt">
+                  <h3>$attrs Picker</h3>
+
+                  <label>
+                      Date:
+                      <!--ATTRIBUTE:  datepickerFormat-->
+                      <input pickerdelux datepicker-format="{{datepickerFormat}}" />
+                  </label>
+
+                  Format:
+
+                  <select ng-model="datepickerFormat">
+
+                      <option value="mm-dd-yy">mm-dd-yy</option>
+                      <option value="d M, y">Short - d M,</option>
+                      <option value="DD, d MM, yy">Full -DD, d MM, yy</option>
+
+                  </select>
+
+
+              </div>
+          </div>
+      </section>
+
+      <div style="float: left; margin-top: 30px; margin-bottom: 10px;  width: 100%; font-weight: bold">Date Picker -- ngModelController: </div>
+      <section ng-controller="pickergrandeCtrl">
+
+          <div class="main">
+
+              <div class="my-picker">
+                  <h3>Date Picker</h3>
+
+                  <label>
+                      Date: {{course.date}}
+                      <!--ATTRIBUTE:  datepickerFormat-->
+                      <input pickergrande datepicker-format="mm-dd-yy" ng-model="course.date" />
+                  </label>
+                </div>
+
+              <div class="other-picker">
+                  <h4>Select a date:</h4>
+                  <select ng-model="course.date">
+                      <option value="01-01-2014">01-01-2014</option>
+                      <option value="10-31-2014">10-31-2014</option>
+                      <option value="12-31-2014">12-31-2014</option>
+                  </select>
+              </div>
+
+
+              </div>
+
+            <div class="debug">
+            <pre ng-bind="course | json">
+            </pre>
+          </div>
+        </section>
+
+
+          <div style="float: left; margin-top: 30px; margin-bottom: 10px;  width: 100%; font-weight: bold">DATA STORED IN JSON FILE:  Poop Factory:</div>
+
+          <section ng-controller="Halo2">
+
+              <div class="main">
+                  <div class="textarea" ng-model="user.bio" hallo></div>
+              </div>
+              <div class="debug">
+                <pre ng-bind="user | json">
+                </pre>
+              </div>
+
+          </section>
+
+
+
+      <script type="text/javascript" src="libs/jquery-1.11.3.js"></script>
+
+      <!--AngularJS 1.3.16:  -->
+      <script type="text/javascript" src="libs/angular.js"></script>
+
+      <!--For Halo-->
+      <script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="//rangy.googlecode.com/svn/trunk/currentrelease/rangy-core.js"></script>
+      <script type="text/javascript" src="hallo.js"></script>
+
+      <!--underscore.JS-->
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+
+      <script type="text/javascript" src="app.js"></script>
+      <script type="text/javascript" src="showdown.js"></script>
+      <script type="text/javascript" src="to-markdown.js"></script>
+
+  </body>
+
+
+</html>

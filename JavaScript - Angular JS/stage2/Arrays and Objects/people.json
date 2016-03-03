@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Mook",
+    "profession": "Programmer",
+    "hometown": "St Louis, MO"
+  },
+  {
+    "name": "Koost",
+    "profession": "Salesman",
+    "hometown": "Denver, CO"
+  },
+  {
+    "name": "Nibs",
+    "profession": "CEO",
+    "hometown": "San Francisco, CA"
+  }
+]

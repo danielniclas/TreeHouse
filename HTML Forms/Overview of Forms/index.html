@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+      <h1>HTML FORMS</h1>
+
+      <form action="index.html" method="post">    
+
+        <!-- action attribute:  "url" or web address of program that processes info submitted by form   -->
+        <!--  method attribute:  http method the browser uses to process the form:  POST or GET -->
+
+      <h1>Sign Up</h1>
+
+
+      <fieldset>      <!-- fieldset creates logical grouping -->
+
+        <legend><span class="number">1</span> Your Basic Info</legend>     <!-- LEGEND -->
+
+          <label for="name">Name:</label>       <!-- LABEL   form matches with id-->
+          <input type ="text" id="name" name="user_name">    <!-- self closing tag -- input box for text -->
+
+          <!-- type attribute - what type of input we want.  ex.  email, password, telephone.... -->
+          <!-- id attribute - good idea - to target element with CSS or JSS - associate label to form control -->
+          <!-- name attribute - when form submitted to server side code form can understand data -->
+
+          <label for="email">eMail:</label> 
+          <input type="email" id="email" name = "user_email">
+
+          <label for="password">Password:</label> 
+          <input type="password" id="password" name = "user_password">
+
+
+          <label>Age:</label>  
+
+          <input type="radio" id="under_13" value="under_13" name="user_age">           <!-- RADIO BUTTON -->
+          <label for="under_13" class="light">Under 13</label>
+
+          <br>
+            
+            <input type="radio" id="over_13" value="over_13" name="user_age">           <!-- RADIO BUTTON -->
+            <label for="over_13" class="light">13 or Older</label>
+
+<!-- Only one RADIO BUTTON at a time can be selected because the "name" attribute is the same for both  "user_age" -->
+
+
+      </fieldset>
+
+
+      <fieldset>
+
+        <legend><span class="number">2</span> Your Profile</legend>
+
+          <label for="bio">Your Stupid Story:</label> 
+          <textarea id="bio" name="user_bio"> </textarea>              <!-- not self closing -->
+
+
+                                                    <!-- SELECT ELEMENTS -- DROP DOWN LIST OF OPTIONS: -->
+
+          <label for ="job">Job Role:</label>
+          <select id="job" name="user_job">
+            
+            <optgroup label="Web">
+            <option value="frontend_dev">Front-End Dev</option>       <!-- predefined options -->
+            <option value="php_dev">PHP Dev</option>
+            <option value="python_dev">Python Dev</option>
+            <option value="rails_dev">Ruby Rails Dev</option>
+            <option value="web_designer">Web Designer</option>
+            </optgroup>
+
+            <optgroup label="Fun">
+            <option value="Bum">Smokin Weed</option>
+            </optgroup>
+
+
+          </select>
+                                                            <!-- Check Boxes -- CHECK BOXES -->
+          <label>Interests:</label>
+
+          <input type="checkbox" id="development" value="interest_development" name="user_interest">
+          <label class="light" for="development">Development</label> <br>
+
+          <input type="checkbox" id="design" value="interest_design" name="user_interest">
+          <label class="light" for="design">Design</label> <br>
+          
+          <input type="checkbox" id="business" value="interest_business" name="user_interest">
+          <label class="light" for="business">Business</label> 
+
+
+
+
+    </fieldset>
+
+      <!-- BUTTON ELEMENT -->
+
+      <button type="submit">Sign Up </button>   <!-- RESET BUTTON - resets all form data -->
+
+
+      </form>
+      
+    </body>
+
+</html>

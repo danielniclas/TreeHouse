@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <title>AJAX with JavaScript</title>
+
+
+  <script>
+      var xhr = new XMLHttpRequest();               //  New XMLHTTP Request Object (XHR OBJECT) -- get ready for AJAX
+
+      xhr.onreadystatechange = function () {        //  Call Back function  + condition  onreadystatechange event - function runs every time state change
+        if (xhr.readyState === 4) {
+        document.getElementById('ajax').innerHTML = xhr.responseText;
+        }
+        };
+
+      xhr.open('GET', 'sidebar.html');              //  xhr.open()   Get - send request for data, Post - send data for server to add to database
+
+      xhr.send();                                   //  Step 4:  Send the request
+
+  </script>
+
+
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <h1>Bring on the AJAX</h1>
+          <ul id="ajax">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

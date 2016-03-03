@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scope</title>
+
+<script type="text/javascript">
+
+//SCOPE -- If you create a variable from within a function you can ONLY use that variable from inside that function
+
+var world = "World!";   //Global SCOPE  -- outside of the function  -- world can be accessed from anywhere!
+//*****  BE VERY CAREFUL WHEN DEFINING GLOBAL VARIABLES  *******
+
+function sayHello () {
+
+	var hello = "Hello ";			//define variable inside of the function
+	console.log (hello + world);
+
+}
+
+sayHello();
+
+console.log("world variable (Global) outside of sayHello():  outside function:  ", world);
+
+//try to access variable hello from outside of function:
+
+// Triggers an error
+//console.log("hello variable (function scope) from outside of sayHello():  outside function:  ", hello);  
+//Error:  hello is undefined !!!  ******************
+
+
+function sayHellox () {
+
+	var hello = "Hello ";			//define variable inside of the function
+
+	function inner () {
+		var extra = " There is more!"
+		console.log(hello + world + extra);  //'world' variable is GLOBAL / 'hello' variable is part of sayHellox function
+	}
+
+	inner()
+}
+
+	sayHellox ();
+
+
+</script>
+
+
+</head>
+<body> </body>
+</html>
+

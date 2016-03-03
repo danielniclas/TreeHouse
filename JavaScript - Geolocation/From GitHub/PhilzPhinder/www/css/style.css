@@ -1,0 +1,187 @@
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+@import url(http://necolas.github.io/normalize.css/3.0.2/normalize.css);
+
+body
+{
+    /*background: #ECEEEF;*/
+    /*background: linear-gradient(#FFE6B2, transparent 90%), url('../img/beans.jpg') no-repeat;*/
+    background: url('../img/beans5.jpg');
+    background-size: cover;
+    text-align: center;
+    /*margin: 50px auto;*/
+    /*max-width: 500px;*/
+    /*padding-top: 0px;*/
+    font: 18px normal 'Varela Round', Helvetica, serif;
+    color: #777B7E;
+}
+
+
+.transparent {
+
+    background-color: transparent;
+}
+
+#map-canvas {
+
+    height: 350px;
+
+}
+
+#content {
+    padding: 0;
+    /*background: #7c5d3d;*/
+    background: transparent;
+    /*background: darkgrey;*/
+}
+
+h1 {
+    font-size: 20px;
+    color:white;
+}
+
+#error {
+    width: 100%;
+    padding: 22px 0;
+    background: #FFE6B2;
+    color: #C5A14E;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#restaurants {
+    /*background: rgba(97, 81, 67, .6);*/
+    background: transparent;
+
+    /*border-radius: 4px;*/
+    border: 1px solid transparent;
+    /*border: 1px solid rgba(97, 81, 67, .6);*/
+    /*margin: -50px 0 0;*/
+}
+
+/*.header {*/
+
+    /*background: #615143;*/
+    /*border-radius: 4px;*/
+    /*border: 1px solid #D5DDE4;*/
+    /*margin: -50px 0 0;*/
+/*}*/
+
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    background:white;
+    margin: 0 0;
+}
+
+li {
+    /*display: inline-block;*/
+    width: 100%;
+    /*padding: 0px 0;*/
+    /*margin: 0;*/
+    border-top: 1px solid #615143;
+
+    height: 45px;
+
+}
+
+.span-class {
+
+    width:30%;
+    padding: 0px;
+    vertical-align: middle;
+    padding-top: 1%;
+
+}
+
+
+/*input[type=button] {*/
+
+    /*color: #000000;*/
+    /*border-radius: 4px;*/
+    /*width: 40%;*/
+    /*position: relative;*/
+
+/*}*/
+
+
+.site-btn {
+
+    background-color: rgba(234, 74, 16, 0.80);
+    border-color:rgba(255, 99, 71, 0.80) ;
+    width: 40%;
+    right: 20%
+    position: absolute;
+    font: 18px normal 'Varela Round', Helvetica, serif;
+    color: white;
+    height: .4em;
+    margin: 6px;
+    padding-top: 4px;
+    padding-bottom: 20px;
+
+}
+
+.phinder-btn {
+
+    background-color: rgba(124, 252, 0, 0.8) !important;
+    border-color: lawngreen !important;
+    height: 30px;
+    margin-top: 9px;
+}
+
+
+.p-city {
+    margin: 0 !important;
+}
+
+
+/*.button {*/
+
+    /*margin-left: 8%;*/
+    /*color: #000000;*/
+    /*border-radius: 4px;*/
+/*}*/
+
+li span {
+    /*color: #2C3238;*/
+    color: white;
+    float: left;
+
+    /*padding:  0 40px;*/
+}
+
+#hud {
+    position: relative;
+    width:300px;
+    height: 50px;
+    background: white;
+    border-radius: 5px;
+    text-align:center;
+    box-shadow: 0px 0px 10px #888888;
+    top:200px;
+    margin: auto;
+    padding: 10px 0;
+    display: none;
+
+}
+
+#infoBox {
+
+    width: 100%;
+    padding: 2px 0;
+    background: lawngreen;
+    color: #595959;
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 1em;
+
+}
+
+.noSites {
+
+    background: red !important;
+    color: white!important;
+}

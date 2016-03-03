@@ -1,0 +1,60 @@
+body {
+background: #eeeeee;
+
+}
+
+//.blog .entry h1 {
+//  font-size: 20px;
+//  color: blue;
+//}
+//
+//.blog .entry p {
+//  font-size: 12px;
+//}
+
+//  DRY --  Don't repeat yourself  -- Dry up the file
+
+//  Nesting 4 to 5 levels deep is good enough
+
+//  Modernizr Library -- ensure browser compatibility
+//  JS Library for browser compatibility tools
+
+
+.blog {
+  > h1 {                         //  > direct ancestor.  Just want the one directly after <h1>
+    color: #ff0000;
+    border: 1px solid #ff0000;
+  }
+}
+
+.entry {
+  h1 {
+    font-size: 20px;
+    color: blue;
+  }
+
+
+  p {
+    font-size: 20px;
+    margin: 180px;
+    html.csscolumns & {         //  post-selector &
+        column-count: 2;
+        column-gap: 10px;
+        margin: 10px;           // here overriding the margin
+    }
+
+    //  "&" is the PARENT SELECTOR
+    //  .blog and .entry come before p
+    //  &  takes all parent selectors (.blog .entry p) and put there
+    //  reverts the order of nesting
+
+  }
+  a {
+    color: #ff0000;   //  <a> is red   &  extra bit of information about <a>
+    &:hover {         //  & allows extra info about the same element
+      color: blue;
+      opacity: 0.5;
+    }
+  }
+}
+

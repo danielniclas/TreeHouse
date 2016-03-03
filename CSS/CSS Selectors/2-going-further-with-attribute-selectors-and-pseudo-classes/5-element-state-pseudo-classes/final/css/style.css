@@ -1,0 +1,46 @@
+/* UI element states pseudo-classes ------------ */
+
+
+/*FOCUS pseudo-class*/
+
+input:focus,
+textarea:focus {
+  border-color: #52bab3;
+}
+
+
+/*DISABLED pseudo-class*/
+
+input:disabled {
+  background: #ddd;
+}
+
+/*CHECKED pseudo-class*/
+
+/*Checked checkbox + label */
+
+input[type="checkbox"]:checked + label {
+  font-weight: bold;
+}
+
+
+/*
+Review:
+
+Excellent when you don't have control over the HTML  -- CMS!!!
+
+:first-child  -  select first child of a parent
+:last-child  -  select last child of a parent
+:only-child  -  target elements with no siblings
+:empty  -  targets elements with no children or content
+
+Substring matching attribute selectors  -  match specific pieces of an attributes value
+ ^ tells browser to match a piece of code that's at the beginning of an attributes value
+ $ matches a piece at the end of an attributes value
+ * matches any part of an attributes value
+
+:checked  -  targets the checked state of a radio button or checkbox
+:disabled -- targets disabled text fields
+
+
+*/

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+    <p>Filtering input:</p>
+
+    <p><input type="text" ng-model="test"></p>
+
+    <ul>
+        <li ng-repeat="x in names | filter:test | orderBy:'job'">
+            {{ (x.name | uppercase) + ', ' + x.job }}
+        </li>
+    </ul>
+
+</div>
+
+<script src="namesController.js"></script>
+
+</body>
+</html>

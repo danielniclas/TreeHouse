@@ -1,0 +1,60 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x.Name + ', ' + x.Country }}
+        </li>
+    </ul>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("http://www.w3schools.com/website/Customers_JSON.php")
+                .success(function (response) {$scope.names = response;});  //  create $scope.names = [ARRAY]
+    });
+
+
+
+    /*
+     Application explained:
+
+     The AngularJS application is defined by ng-app. The application runs inside a <div>.
+
+     The ng-controller DIRECTIVE names the controller object.
+
+     The customersCtrl function is a standard JavaScript {OBJECT} CONSTRUCTOR.
+
+     AngularJS will invoke customersCtrl with a $scope and $http object.
+
+     $scope is the APPLICATION {OBJECT} (the owner of application variables and functions).
+
+     $http is an XMLHttpRequest object for requesting external data.
+
+     $http.get() reads static JSON data from http://www.w3schools.com/website/Customers_JSON.php.
+
+     If success, the controller creates a property (names) in the scope, with JSON data from the server.
+     */
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

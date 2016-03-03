@@ -1,0 +1,35 @@
+
+
+
+
+    <h1>Dracula's Blood</h1>
+
+    <ul>
+        <!--<li> <a href="#">I love blood!</a></li>-->
+        <!--<li> <a href="#">The Count</a></li>-->
+        <!--<li> <a href="#">Thievery</a></li>-->
+
+
+        <!--each helper loops over each element of the model, which is the posts ARRAY-->
+        {{#each}}
+            <li>Item ID:  {{id}},  {{title}}</li>
+        {{/each}}
+
+    </ul>
+
+    <div style="height: 20px;"></div>
+
+    <ul>
+        {{#each}}
+
+            <li>{{#link-to 'post' this.id}}{{title}}{{/link-to}}</li>
+
+        {{/each}}
+
+    </ul>
+
+    <p><a href= '#' {{action 'sortByTitle'}}> Sort by Title</a></p>
+
+
+
+<!--To load the template need to put it in the template loader of our: index.html-->

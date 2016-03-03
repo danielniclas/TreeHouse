@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhilzPhinder</title>
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!--jQuery Mobile -- CSS:-->
+
+    <!--<link rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css" />-->
+    <!--<link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css" />-->
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <!--jQuery Mobile -- JS:-->
+
+    <!--<script src="js/jquery.mobile.custom.js"></script>-->
+
+    <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+
+
+    <!--My CSS:-->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Google Maps:-->
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div data-role="page">
+
+    <div id="error">JavaScript must be enabled for this application to work!</div>
+    <p id="hud">Phinding Philz<br /><img src="img/download.gif" alt="Progress bar"></p>
+
+
+    <!--<div data-role="header" id="restaurants">-->
+    <div data-role="header" class="header" id="restaurants" >
+
+        <h1>PhilzPhinder</h1>
+        <button class="ui-btn-right ui-btn ui-btn-inline ui-corner-all ui-btn-icon-right ui-icon-home ui-mini phinder-btn" onclick="reload()">Phind</button>
+        <!--<button type="button" class="button" onclick="reload()">Phind</button>-->
+
+    </div>
+
+
+   <div role="main" class="ui-content" id="content">
+
+        <ul id="siteLocations" class="transparent"></ul>
+
+        <div id="infoBox">PhindingPhulPhilment</div>
+
+        <div class="map" id="map-canvas"></div>
+
+   </div>
+
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="js/object.js"></script>
+<script src="js/distanceCalculator.js"></script>
+<script src="js/geolocation.js"></script>
+<script src = "js/mapper.js"></script>
+
+
+<!--<li><span data-lat="37.333471" data-lon="-121.884977">? miles</span><input type="button" id="paseo" value="San Jose" onclick="mappit(event)"></li>-->
+
+
+
+</body>
+
+</html>
+
+

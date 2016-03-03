@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+
+<html ng-app="appName-store">
+<!--ng-app is a DIRECTIVE-->
+<!--When this document loads - the ng-app directive will run the 'appName-store' module-->
+
+<!--This directive creates an Angular application by running this module whe the document loads-->
+<!-- !!  TREATS the html INSIDE of this element is part of the angular app !! -->
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular.JS  Code School</title>
+
+    <!--Angular:  A client-side JavaScrip Framework for adding interactivity to HTML-->
+    <!--Need to tell out HTML when to trigger out JS-->
+
+    <!--Nice to Know:-->
+    <!--Automated Testing Tools-->
+    <!--BDD - Behavior Driven Development-->
+    <!--TDD - Test Driven Development-->
+
+    <!--Angular plays well with jQuery-->
+
+    <!--Angular only requests info it needs from JSON data-->
+
+    <!--CSS for Twitter Bootstrap-->
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.min.css" />
+
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+
+
+<body>
+
+<!--EXPRESSIONS - insert dynamic values inside of HTML-->
+<!--EXPRESSIONS:  http://docs.angularjs.org/guide/expression-->
+<p>I am {{4+6}}</p>
+<p>{{'hello'+ ' ' + 'you'}}</p>
+
+
+
+<!--ATTACH Controller to this element in HTML:  ATTACH StoreController to this DIV-->
+<!--SCOPE of the CONTROLLER is only in this DOM element-->
+<!--Directive:  ng-controller-->
+<!--Controller Name:  StoreController-->
+<!--Keyword:  as-->
+<!--Alias:  alias  (to be used inside of our expression)-->
+
+  <div ng-controller="StoreController as alias">
+
+      <ul class="list-group">
+
+          <li class="list-group-item" ng-repeat="indexx in alias.rock" ng-hide="alias.rock.soldOut">
+              <!--ng-repeat - cycle through [ARRAY]   'alias.rock' holds the 'gems' array -->
+
+          <!--alias.rock is the ARRAY we ITERATE THROUGH-->
+
+            <h3>{{indexx.name}}
+            <em class="pull-right"> {{indexx.price | currency}}</em>
+            <img ng-src="{{indexx.images[0]}}" />
+            </h3>
+
+
+              <!--<section ng-init="tab = 1" ng-controller="PanelController as panelalias">-->
+              <section ng-controller="PanelController as panelalias">
+
+
+                  <ul class="nav nav-pills">
+                      <li ng-class="{active:panelalias.isSelected(1)}"><a href ng-click="panelalias.selectTab(1)">Description</a></li>
+                      <li ng-class="{active:panelalias.isSelected(2)}"><a href ng-click="panelalias.selectTab(2)">Specifications</a></li>
+                      <li ng-class="{active:panelalias.isSelected(3)}"><a href ng-click="panelalias.selectTab(3)">Reviews</a></li>
+                  </ul>
+
+
+                  <div class="panel" ng-show="panelalias.isSelected(1)">
+                      <h4>Description - ng-click Set Tab To: {{panelalias.tab}}</h4>
+                      <p>{{indexx.description}}</p>
+                  </div>
+
+                  <div class="panel" ng-show="panelalias.isSelected(2)">
+                      <h4>Specifications - ng-click Set Tab To: {{panelalias.tab}}</h4>
+                      <p>None Yet</p>
+                  </div>
+
+                  <div class="panel" ng-show="panelalias.isSelected(3)">
+
+                      <h4>Reviews - ng-click Set Tab To: {{panelalias.tab}}</h4>
+
+
+
+
+
+                      <!--REVIEW FORM:-->
+
+
+                      <form name="reviewForm" ng-controller="ReviewController as reviewCtrlalias"
+                              ng-submit="reviewForm.$valid && reviewCtrlalias.addReview(indexx)" novalidate>
+
+
+                          <!--NESTED! NESTED!  ng-repeat  NESTED!  NESTED! -->
+                          <!--'reviewindex hold {OBJECTS} in the 'indexx.reviews' [ARRAY]-->
+
+
+                          <blockquote ng-repeat="reviewindex in indexx.reviews">
+                              <b>Stars:  {{reviewindex.stars}}</b>
+                              {{reviewindex.body}}
+                              <cite>by:  -{{reviewindex.author}}</cite>
+                          </blockquote>
+
+
+
+                         <!--ng-model; binds the form element value to the property-->
+                         <!--LIVE PREVIEW REVIEW:-->
+                          <blockquote>
+                              <b>Stars:  {{reviewCtrlalias.reviewindex.stars}}</b>
+                              {{reviewCtrlalias.reviewindex.body}}
+                              <cite class="clearfix">by:  -{{reviewCtrlalias.reviewindex.author}}</cite>
+                          </blockquote>
+
+                          <!--ng-model; binds the form element value to the property-->
+
+                          <fieldset class="form-group">
+                          <select ng-model="reviewCtrlalias.reviewindex.stars" required>
+                              <option value="1"> 1 star</option>
+                              <option value="2"> 2 star</option>
+                              <option value="3"> 3 star</option>
+                              <option value="4"> 4 star</option>
+                              <option value="5"> 5 star</option>
+                          </select> <br>
+                          </fieldset>
+
+                          <fieldset class="form-group">
+                          <textarea ng-model="reviewCtrlalias.reviewindex.body" required></textarea><br>
+                          <label>by:</label>
+                          </fieldset>
+
+                          <fieldset class="form-group">
+                          <input ng-model="reviewCtrlalias.reviewindex.author" type="email" required />
+                          </fieldset>
+
+                          <fieldset class="form-group">
+                          <input type="submit"  value="Submit" />
+                          </fieldset>
+
+                          <!--Debugging Code  VALIDATION  --  True or False   form has name attribute: 'reviewForm' -->
+                          <!--.$valid - '$' means referencing a property on the form (built in angular property)-->
+                          <div> XXX reviewForm is: {{reviewForm.$valid}}</div>
+
+                      </form>
+
+
+
+
+                  </div>
+
+
+              </section>
+
+
+
+              <!--Directive:  Only show if the value of this expression is TRUE-->
+        <!--<button ng-show="alias.rock.canPurchase"> Add to Cart </button>-->
+        <button ng-show="index.canPurchase"> Add to Cart </button>
+
+          </li>
+      </ul>
+  </div>
+
+
+
+
+
+
+
+    <!--AngularJS Library:  -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+
+    <!--Angular from CDN:  -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>-->
+
+    <!--Custom JS file --  Angular MODULE -->
+    <script type="text/javascript" src="js/app.js"></script>
+
+
+</body>
+
+
+
+</html>

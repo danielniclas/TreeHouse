@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AJAX with JavaScript</title>
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+
+  <!--jQuery library script tag-->
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+  <script>
+
+//  AJAX
+//  To inject new html into a Web page
+//  To receive JSON data from a Web server
+//  To post form data to a database
+
+// How AJAX works:
+//  1.  Create an XMLHTTP Request object
+//  2.  Create a callback function
+//  3.  Open a request
+//  4.  Send the request
+
+
+  function sendAJAX() {
+
+    //  Hides 4 AJAX steps in one line of code:
+    //  $('#ajax') -- AJAX selector
+    //  .load() METHOD  --  request chunk of HTML and inserting into the page
+
+    $('#ajax').load('sidebar.html');      //  4 steps in one line -- select #ajax element .load() insert html into page
+    $('#load').hide();                    //  Hide the button!!  .hide()
+  }
+  </script>
+
+
+
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+          </div>
+
+
+          <button id="load" onclick="sendAJAX()" class="button">Bring it!</button>
+
+          <ul id="ajax">
+
+          </ul>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

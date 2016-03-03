@@ -1,0 +1,46 @@
+<html>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<head>
+    <style type="text/css">
+        .main, .debug {width: 48%;}
+        .main {float: left;}
+        .debug {float: right; padding: 25px;}
+        .puppies {margin: 25px;padding: 25px;}
+        a, h2, h3, p, img {margin: 25px;}
+    </style>
+</head>
+
+<body ng-app="myApp">
+
+
+    <a class="btn btn-success" href="#/View1"> View 1 </a>
+    <a class="btn btn-info" href="#/View2"> View 2 </a>
+    <a class="btn btn-warning" href="#/View3"> View 3 </a>
+
+
+    <div>
+        <div ng-view></div>
+    </div>
+
+
+    <div ng-controller="myCtrl" class="debug">
+        <h2>JSON Data</h2>
+          <pre ng-bind="puppies | json">
+          </pre>
+          <pre ng-bind="toys | json">
+          </pre>
+    </div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+    <script type="text/javascript" src="app-video.js"></script>
+
+
+</body>
+
+</html>

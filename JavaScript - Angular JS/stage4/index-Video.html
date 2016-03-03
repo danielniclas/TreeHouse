@@ -1,0 +1,121 @@
+<html>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<head>
+
+    <style type="text/css">
+        .main, .debug {
+            width: 48%;
+        }
+
+        .main {
+            float: left;
+        }
+
+        .debug {
+            float: right;
+        }
+
+        .contact-card, .receipt .line-item {
+            display: block;
+            margin-bottom: 1.5em;
+        }
+
+        .contact-card .name, .receipt .line-item .item {
+            font-weight: bold;
+            margin-right: 1em;
+            color: blue;
+        }
+
+        .contact-card .profession {
+            margin-right: 1em;
+            color: red;
+        }
+
+        .contact-card .hometown {
+            font-style: italic;
+        }
+
+        #puppies {
+            margin-top: 25px;
+            border: 2px solid red;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        button {
+            margin: 25px;
+        }
+
+
+    </style>
+</head>
+
+
+
+<body  ng-app="myApp" ng-controller="myCtrl">
+
+<div class="main">
+
+<button class="btn btn-primary"> View Puppy Records </button>
+
+
+    <div id="puppies">
+
+        <h3>Puppy Information</h3>
+
+        <table class="table table-striped table-bordered">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Profession</th>
+                    <th>Location</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr ng-repeat='pup in puppies' poopers></tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+
+    <div class="receipt">
+        <h3>Puppy Toys</h3>
+        <p class="line-item" ng-repeat="(toy, cost) in toys">
+            <span class="item">{{toy}}</span>
+            <span class="cost">${{cost}}</span>
+        </p>
+    </div>
+
+
+</div>
+
+
+
+<div class="debug">
+      <pre ng-bind="puppies | json">
+      </pre>
+      <pre ng-bind="toys | json">
+      </pre>
+</div>
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script type="text/javascript" src="app-video.js"></script>
+</body>
+
+
+</html>

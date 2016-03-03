@@ -1,0 +1,361 @@
+
+/*	Animations
+------------------------------------------ */
+
+.boat {
+	-webkit-animation: rock-boat 3s ease-in-out infinite;
+}
+.boat::after {
+	-webkit-animation: steam 4s 2s infinite;
+}
+body {
+	-webkit-animation: bg-move 8s ease-out reverse infinite;
+
+    /*-webkit-animation-play-state: paused;*/
+
+}
+
+/*call: mike-move animation sequence*/
+/*duration of 6s*/
+/*delay of 6s*/
+/*timing function: ease-out*/
+/*forwards fill mode*/
+
+/*call: mike-float*/
+/*duration:  3.2s*/
+/*iteration count: infinite*/
+
+/*.sat {*/
+	/*-webkit-animation: mike-move 10s 2s ease-out forwards,*/
+	                   /*mike-float 3.2s infinite;*/
+/*}*/
+
+
+.sat {
+    -webkit-animation: sat-move 8s ease-in-out infinite,
+                       sat-float 3s infinite;
+}
+
+
+
+.sat .bolt1 *
+{
+    -webkit-animation: bolt1-flash 8s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+.sat .bolt2 *
+
+{
+    -webkit-animation: bolt2-flash 8s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+.sat .bolt3 *
+{
+    -webkit-animation: bolt3-flash 8s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+
+
+
+
+.sat #wave1
+{
+    -webkit-animation: wave1-flash 2s 1s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+.sat #wave2
+{
+    -webkit-animation: wave2-flash 2s 1s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+.sat #wave3
+{
+    -webkit-animation: wave3-flash 2s 1s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+
+
+
+#colorball1
+{
+    -webkit-animation: colorball1-flash 2s 2s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+
+#colorball2
+{
+    -webkit-animation: colorball2-flash 1s 1s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+
+
+
+
+
+
+.lion #lion1 {
+
+    -webkit-animation: lion-color 2s infinite;
+}
+
+.lion #lion2 {
+
+    -webkit-animation: lion2-color 2s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+.lion #lion3 {
+
+    -webkit-animation: lion3-color 2s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+.lion #lion4 {
+
+    -webkit-animation: lion4-color 2s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+
+.lion #lion5 {
+
+    -webkit-animation: lion5-color 2s infinite;
+    -webkit-animation-timing-function: cubic-bezier(0,1,0,1);
+}
+
+.lionsize {
+
+    -webkit-animation-name: slide;
+    -moz-animation-name: slide;
+    animation-name: slide;
+
+    -webkit-animation-duration: 10s;
+    -moz-animation-duration: 10s;
+    -o-animation-duration: 10s;
+    animation-duration: 10s;
+
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+/*	Keyframes - WebKit only
+------------------------------------------ */
+
+@-webkit-keyframes sat-move  {
+
+    /*50%  { -webkit-transform: rotate(-5deg) translateY(-10px); }*/
+
+    20% { left: 20%;}
+    40% { left: 40%;}
+    50% { left: 50%; }
+    80% { left: 80%; }
+    100%  { left: 100%; }
+
+}
+
+@-webkit-keyframes sat-float {
+    50% { -webkit-transform: rotateZ(5deg) translateY(-15px); }
+}
+
+@-webkit-keyframes bolt1-flash {
+
+    40% { fill: transparent; stroke: transparent; }
+    50% { fill: yellow; stroke: yellow; }
+    80% { fill: transparent; stroke: transparent;}
+    96% { fill: yellow; stroke: yellow;}
+}
+
+
+@-webkit-keyframes bolt2-flash {
+
+    42% { fill: transparent; stroke: transparent; }
+    52% { fill: yellow; stroke: yellow; }
+    82% { fill: transparent; stroke: transparent;}
+    98% { fill: yellow; stroke: yellow;}
+}
+
+
+@-webkit-keyframes bolt3-flash {
+
+    44% { fill: transparent; stroke: transparent; }
+    54% { fill: yellow; stroke: yellow; }
+    84% { fill: transparent; stroke: transparent;}
+    100% { fill: yellow; stroke: yellow;}
+}
+
+
+
+@-webkit-keyframes wave1-flash {
+
+    39% { stroke: white; }
+    49% { stroke: transparent; }
+    79% { stroke: white;}
+    95% { stroke: transparent;}
+}
+
+
+@-webkit-keyframes wave2-flash {
+
+    42% { stroke: white; }
+    52% { stroke: transparent; }
+    82% { stroke: white;}
+    98% { stroke: transparent;}
+}
+
+
+@-webkit-keyframes wave3-flash {
+
+    44% { stroke: white; }
+    54% { stroke: transparent; }
+    84% { stroke: white;}
+    100% { stroke: transparent;}
+}
+
+
+
+@-webkit-keyframes colorball1-flash {
+
+    40% { stroke: orangered; }
+    50% { stroke: grey; }
+    80% { stroke: orangered;}
+    96% { stroke: grey;}
+}
+
+
+@-webkit-keyframes colorball2-flash {
+
+    10% { stroke: orangered; }
+    35% { stroke: grey; }
+    76% { stroke: orangered;}
+    92% { stroke: grey;}
+}
+
+
+
+
+
+
+@-webkit-keyframes slide {
+    0%   { width:   0%;top: 2%; }
+    20% { left: 50%;}
+    30% {top: 3%;}
+    40% { left: -5%; top: 3%}
+    50% { left: 50%; }
+    60%  { width:  50%; }
+    70%  { width:  80%; }
+    80% { left: 7%; top: 8% }
+    100% { width: 90%; left: 0%; top: 10% }
+}
+
+
+
+@-webkit-keyframes lion5-color {
+
+
+    20% { fill: transparent; }
+    40% { fill: aqua; }
+    50% { fill: #ffe5b2; }
+    100%  { fill: aqua; }
+
+}
+
+
+@-webkit-keyframes lion4-color {
+
+
+    20% { fill: purple; }
+    40% { fill: orange; }
+    50% { fill: purple; }
+    100%  { fill: orange; }
+
+}
+
+
+@-webkit-keyframes lion3-color {
+
+
+    40% { fill: transparent; }
+    50% { fill: blue; }
+    80% { fill: transparent; }
+    100%  { fill: blue; }
+
+}
+
+
+@-webkit-keyframes lion2-color {
+
+
+    40% { fill: red; }
+    50% { fill: yellow; }
+    80% { fill: red; }
+    100%  { fill: yellow; }
+
+}
+
+
+@-webkit-keyframes lion-color {
+
+    20% { fill: transparent; }
+    40% { fill: transparent; }
+    50% { fill: yellow; }
+    80% { fill: orange; }
+    100%  { fill: tomato; }
+
+}
+
+
+
+
+@-webkit-keyframes rock-boat {
+	50%  { -webkit-transform: rotate(-5deg) translateY(-10px); }
+}
+
+@-webkit-keyframes steam {
+	40%,
+	60%  { opacity: 1; }
+	100% { -webkit-transform: translate(-15%, -35%) rotateZ(20deg); }
+}
+
+@-webkit-keyframes bg-move {
+	0%   { background-position:  100% -560px; }
+	100% { background-position: -350% -460px; }
+}
+
+/*@-webkit-keyframes mike-move {*/
+	/*100% { left: 102%; }*/
+/*}*/
+
+@-webkit-keyframes mike-move {
+    20% { left: 102%; }
+    30% { left: -30%; }
+    40% { left: 102%; }
+    60% { left: 7%; }
+    100%  { left: 102%; }
+}
+
+
+
+@-webkit-keyframes mike-float {
+	50% { -webkit-transform: rotateZ(5deg) translateY(-185px); }
+}
+
+
+
+
+
+
+
+
+
+
+
+

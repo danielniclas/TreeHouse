@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+
+</head>
+<body>
+
+
+<!--<script src="http://philz.danielniclas.com/data/?callback=jsonCallback"></script>-->
+
+<div>
+    <h1>JSONP Test</h1>
+</div>
+
+<div id="list"></div>
+
+<div id="data"></div>
+
+
+<script>
+
+
+
+    //      callback function:
+    function jsonpcallback(data) {
+        //do stuff with JSON
+        console.log("The DATA:  ", data);
+
+        var content = "<p>";
+        content += "The DATA: " + data + "</p>";
+
+        $("#data").html(content);
+
+
+    }
+
+
+    (function($) {
+
+
+//        URL Options:
+
+        //var url = 'data/test.js?callback=jsonpcallback&id=123';
+
+
+//      dataType:  jsonp
+        var url = "http://philz.danielniclas.com/data/test2.js?callback=jsonpcallback";
+
+//       dataType:  json
+//       var url = "http://philz.danielniclas.com/data/test.json";
+
+
+
+        $.getJSON( url, function( data ) {
+
+            var items = [];
+            $.each( data, function( key, val ) {
+                items.push( "<li id='" + key + "'>" + val + "</li>" );
+            });
+
+            $( "<ul/>", {
+                "class": "my-new-list",
+                html: items.join( "" )
+            }).appendTo( "body" );
+        });
+
+    }) (jQuery);
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

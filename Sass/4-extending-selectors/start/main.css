@@ -1,0 +1,6 @@
+.bar {
+  height: 14px;
+  font-size: 10px; }
+  .bar > div {
+    float: left;
+    clear: none; }

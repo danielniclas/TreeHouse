@@ -1,0 +1,50 @@
+
+
+
+
+
+    <h1>Contact</h1>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <p>Want to get in TOUCH!  How about we go out for a bite?</p>
+
+            <ul>
+                <!--NESTING-->
+                <li>{{#link-to 'phone'}}Phone{{/link-to}}</li>
+                <li>{{#link-to 'email'}}Email{{/link-to}}</li>
+
+            </ul>
+
+            {{#if messageSent}}
+
+                <p>Thank you.  Your message has been sent. Your confirmation number is {{confirmationNumber}} </p>
+            {{else}}
+                <p>Or, <a href="#" {{action 'sendMessage'}}>Click Here</a> to send a message: </p>
+            {{/if}}
+
+
+
+
+
+        </div>
+
+        <div class="col-md-6">
+
+            <!--Handlebar Helper-->
+            {{outlet}}
+            <!--Anywhere you add an Outlet Helper, a nested route will get rendered into that spot-->
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+<!--To load the template need to put it in the template loader of our: index.html-->

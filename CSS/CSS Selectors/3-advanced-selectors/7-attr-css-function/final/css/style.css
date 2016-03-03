@@ -1,0 +1,130 @@
+/* Pseudo-elements -------------------------------- */
+
+.intro::first-line {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.intro::first-letter {
+  float: left;
+  font-size: 80px;
+  color: white;
+  padding: 5px 10px;
+  background: #384047;
+  margin: 10px 10px 0 0;
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.jpg::before {
+  content: url(../img/icn-picture.svg);
+  margin-right: 8px;
+}
+
+.zip::before {
+  content: url(../img/icn-zip.svg);
+  margin-right: 8px;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: coral;
+  margin: 0 10px;
+}
+
+.d-loads a::after {
+  content: attr(title);
+  /*content: attr(href);*/
+  display: inline-block;
+  /*color: initial;*/
+  color: #ff0000;
+  font-size: .65em;
+  margin-left: 5px;
+}
+
+.d-loads a {
+  border: solid 1px;
+  color: violet;
+}
+
+
+
+
+/*
+
+Review:
+
+Excellent when you don't have control over the HTML  -- CMS!!!
+
+PSEUDO-CLASSES:
+
+:first-child  -  select first child of a parent
+:last-child  -  select last child of a parent
+:only-child  -  target elements with no siblings
+:empty  -  targets elements with no children or content
+
+Substring matching attribute selectors  -  match specific pieces of an attributes value
+ ^ tells browser to match a piece of code that's at the beginning of an attributes value
+ $ matches a piece at the end of an attributes value
+ * matches any part of an attributes value
+
+:checked  -  targets the checked state of a radio button or checkbox
+:disabled -- targets disabled text fields
+
+:nth-child()  --  (argument)
+:nth-child(an+b)  --  b = first element to select (number),   a = cycle of elements to select
+
+:nth-of-type()
+:nth-last-of-type()    --  number of element from the bottom
+
+:root  --  highest/top most element in page  --  usually <html> element
+:target --  targets of internal page href links
+
+:not()  --  element we do NOT want to target
+
+PSEUDO-ELEMENTS:   (not part of the DOM)
+
+::first-line
+::first-letter
+
+::before
+::after
+
+attr()    -   capture content from an attribute
+
+
+
+
+  +  ADJACENT SIBLING COMBINATOR Selector  --  Immediately follows an element
+   targets only the element that follows
+
+
+    Combinators -------------
+
+   Combinators:  >  +  ~     Target any DESCENDANT element and any SIBLING
+
+    > Direct Children
+
+     +  ADJACENT SIBLING COMBINATOR Selector  --  Immediately follows an element
+   See Above
+
+     ~  General Sibling Combinator
+   Targets immediate sibling and every specified sibling that follows
+
+      Every label element that follows an h1
+
+
+*/
+
+
+
+
+
+
+
+

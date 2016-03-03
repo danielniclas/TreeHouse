@@ -1,0 +1,197 @@
+
+/*body {*/
+	/*background: darkslategrey;*/
+	/*background-size: 780px;*/
+/*}*/
+
+/* Base Styles -------------------- */
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+/** {*/
+    /*box-sizing: border-box;*/
+/*}*/
+
+body {
+    color: #878787;
+    margin: 0;
+    font: 1em/1.5 'Roboto Condensed', sans-serif;
+}
+
+h1 {
+    font-size: 5.625rem; /* 90px/16px  */
+    color: rgba(255, 255, 255, 1);
+    /*text-transform: uppercase;*/
+    font-weight: normal;
+    line-height: 1.3;
+    text-shadow: 0 1px 1px rgba(0,0,0,.8);
+
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 3.3125em; /* 53px/16px  */
+    font-weight: normal;
+    line-height: 1.1;
+    margin: 0 0 .5em; /* 0 0 26px */
+}
+
+h3 {
+    font-size: 1.25em; /* 20px/16px  */
+    color: #48525c;
+    line-height: 1.2;
+    margin-bottom: 1.7em; /* 34px */
+}
+
+img {
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+
+
+
+
+/* Main Styles --------------------- */
+
+.main-header {
+    padding-top: 170px;
+    height: 650px;
+
+    /*background: linear-gradient(#ffa949, transparent 90%),*/
+    /*linear-gradient(0deg, #fff, transparent),*/
+
+    background: linear-gradient(grey, transparent 90%),
+    linear-gradient(0deg, #fff, transparent),
+    white url('../img/mountains.jpg') no-repeat center;
+    background-size: cover;
+
+}
+
+.title {
+    color: white;
+    font-size: 1.625rem; /* 26px/16px */
+}
+
+
+.intro {
+    font-size: 1.25em; /* 20px/16px */
+    line-height: 1.6;
+}
+
+.primary-content,
+.main-header,
+.main-footer {
+    text-align: center;
+}
+
+.primary-content {
+    padding-top: 25px;
+    /*padding-bottom: 95px;*/
+    padding-bottom: 10px;
+}
+
+.secondary-content {
+    padding-top: 80px;
+    padding-bottom: 70px;
+    border-bottom: 2px solid #dfe2e6;
+}
+
+
+.floverdiv {
+
+    padding-left: 15%;
+}
+
+
+
+/* Animation  --------------------- */
+
+
+
+.sat {
+    width: 95px;
+    position: absolute;
+    top: 10px;
+    left: -10%;
+    -webkit-transform: rotateZ(-5deg);
+    -moz-transform: rotateZ(-5deg);
+    -ms-transform: rotateZ(-5deg);
+    transform: rotateZ(-5deg);
+}
+
+.sat .bolt2 *,
+.sat .bolt3 *,
+.sat .bolt1 *
+
+{
+    fill: yellow;
+    stroke: yellow;
+    visibility: hidden;
+}
+
+
+.sat #wave1,
+.sat #wave2,
+.sat #wave3
+
+{
+    stroke: white;
+    visibility: hidden;
+}
+
+#colorball1,
+#colorball2 {
+
+    fill: orangered;
+    stroke: orangered;
+    visibility: hidden;
+}
+
+
+#flower8 .petalcolor1 *,
+#flower13 .petalcolor1 *,
+#flower20 .petalcolor1 *
+{
+    fill: blueviolet;
+}
+
+
+#flower5 .petalcolor2 *,
+#flower16 .petalcolor2 *,
+#flower18 .petalcolor2 *
+{
+    fill: #ff1493;
+}
+
+#flower1,
+#flower2,
+#flower3,
+#flower4,
+#flower5,
+#flower6,
+#flower7,
+#flower8,
+#flower9,
+#flower10,
+#flower11,
+#flower12,
+#flower13,
+#flower14,
+#flower15,
+#flower16,
+#flower17,
+#flower18,
+#flower19,
+#flower20,
+#flower21,
+#flower22 {
+    visibility: hidden;
+}

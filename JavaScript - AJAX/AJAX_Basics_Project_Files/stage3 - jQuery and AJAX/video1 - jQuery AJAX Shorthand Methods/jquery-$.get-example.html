@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AJAX with JavaScript</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--jQuery library script tag-->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+    <script>
+
+        //  AJAX
+        //  To inject new html into a Web page
+        //  To receive JSON data from a Web server
+        //  To post form data to a database
+
+        // How AJAX works:
+        //  1.  Create an XMLHTTP Request object
+        //  2.  Create a callback function
+        //  3.  Open a request
+        //  4.  Send the request
+
+
+
+        function sendAJAX() {                          //  URL + Callback function
+            $.get('sidebar.html',function (response){  //  (response) argument is the same as .responseText property
+                                                       //  PASS response argument (text) into the function
+                $('#ajax').html(response);             //  insert HTML into #ajax element
+            })
+
+
+//$.get(url, data, callback);    url making request too.
+
+// var url = '/employees.php';    php script in ROOT directory of Web server
+//                                php script that retrieves info about employees
+
+
+//      data:                    data argument is optional -- data you send to web server -- added to URL as query string
+//                               JS object can be provided as data argument
+//                               jQuery will format it into a query string
+//            var data = {
+//                  firstName: "Dave",
+//                  lastName: "McFarland"
+//              };
+
+//  Callback function -- don't need to check for ready STATUS or errors
+//  var callback = function(response) {        };
+//  jQuery hands the callback function the data it receives from the server
+//
+//  (response) argument is the same as .responseText property
+
+
+
+
+
+//            $('#ajax').load('sidebar.html');      //  4 steps in one line -- select #ajax element .load() insert html into page
+            $('#load').hide();                    //  Hide the button!!  .hide()
+        };
+
+
+    </script>
+
+
+
+</head>
+<body>
+<div class="grid-container centered">
+    <div class="grid-100">
+        <div class="contained">
+            <div class="grid-100">
+                <div class="heading">
+                    <h1>Bring on the AJAX</h1>
+                </div>
+
+
+                <button id="load" onclick="sendAJAX()" class="button">Bring it!</button>
+
+                <ul id="ajax">
+
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
