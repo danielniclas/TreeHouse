@@ -1,5 +1,6 @@
 body {
-background: #eeeeee;
+//background: #eeeeee;
+background: antiquewhite;
 
 }
 
@@ -22,8 +23,8 @@ background: #eeeeee;
 
 .blog {
   > h1 {                         //  > direct ancestor.  Just want the one directly after <h1>
-    color: #ff0000;
-    border: 1px solid #ff0000;
+    color: black;
+    border: 1px solid green;
   }
 }
 
@@ -33,11 +34,11 @@ background: #eeeeee;
     color: blue;
   }
 
-
   p {
     font-size: 20px;
     margin: 180px;
-    html.csscolumns & {         //  post-selector &
+    background-color: lightgreen;
+    html.csscolumns & {         //  parent - selector >> & :  takes all parent selectors (.entry and p) and adds them here.  <<  FINE GRAIN CONTROL
         column-count: 2;
         column-gap: 10px;
         margin: 10px;           // here overriding the margin
@@ -51,7 +52,7 @@ background: #eeeeee;
   }
   a {
     color: #ff0000;   //  <a> is red   &  extra bit of information about <a>
-    &:hover {         //  & allows extra info about the same element
+    &:hover {         //  & allows extra info about the same element  <<  "in the zone of the selector above"
       color: blue;
       opacity: 0.5;
     }
